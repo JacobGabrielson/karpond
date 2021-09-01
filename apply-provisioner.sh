@@ -10,8 +10,5 @@ metadata:
 spec:
   labels:
     node.k8s.aws/launch-template-name: "Karpenter-jacob-karpenter-demo-11759955701874416904"
-  cluster:
-    name: ${CLUSTER_NAME}
-    endpoint: $(aws eks describe-cluster --name ${CLUSTER_NAME} --query "cluster.endpoint" --output json)
   ttlSecondsAfterEmpty: 30
 EOF

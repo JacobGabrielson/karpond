@@ -12,6 +12,11 @@ spec:
       labels:
         app: inflate
     spec:
+      # Note: you may wish to comment the tolerations section out
+      tolerations:
+        - key: foo
+          value: bar
+          effect: NoSchedule
       containers:
         - name: inflate
           image: public.ecr.aws/eks-distro/kubernetes/pause:3.2

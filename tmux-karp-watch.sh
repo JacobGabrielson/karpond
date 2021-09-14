@@ -26,7 +26,7 @@ if [[ $1 == "podWatch" ]]; then
     exit 0
 fi
 
-
-twatch -d "kubectl get nodes"
-tmux split-window -l 50% -h -d -p 10 "stern ^karpenter --all-namespaces"
-tmux split-window -l 50% -v -d -p 10 "watch -n 5 $0 podWatch"
+tmux split-window -l 50% -h -d "stern ^karpenter --all-namespaces"
+tmux split-window -l 50% -v -d "watch -d -n 1 kubectl get nodes"
+tmux split-window -l 50% -v -d "watch -n 5 $0 podWatch"
+tmux split-window -l 7 -v -d "watch -d -n 1 kubectl get pods -n karpenter"

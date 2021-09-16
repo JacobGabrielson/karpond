@@ -1,0 +1,25 @@
+The time after the unit is active or started is printed after the "@" character.
+The time the unit takes to start is printed after the "+" character.
+
+graphical.target @29.560s
+└─multi-user.target @29.560s
+  └─[1;31mupdate-motd.service @25.700s +3.858s[0m
+    └─network-online.target @7.773s
+      └─[1;31mcloud-init.service @6.826s +942ms[0m
+        └─[1;31mnetwork.service @6.206s +616ms[0m
+          └─network-pre.target @6.201s
+            └─[1;31mcloud-init-local.service @3.930s +2.271s[0m
+              └─basic.target @3.929s
+                └─sockets.target @3.928s
+                  └─rpcbind.socket @3.927s
+                    └─sysinit.target @3.924s
+                      └─[1;31msystemd-update-utmp.service @3.919s +2ms[0m
+                        └─[1;31mauditd.service @3.540s +378ms[0m
+                          └─[1;31msystemd-tmpfiles-setup.service @3.510s +4ms[0m
+                            └─local-fs.target @3.482s
+                              └─local-fs-pre.target @3.481s
+                                └─[1;31mlvm2-monitor.service @1.883s +1.596s[0m
+                                  └─lvm2-lvmetad.service @2.041s
+                                    └─lvm2-lvmetad.socket @1.881s
+                                      └─-.slice
+

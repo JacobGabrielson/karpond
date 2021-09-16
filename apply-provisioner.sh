@@ -10,10 +10,8 @@ metadata:
 spec:
   labels:
   #  node.k8s.aws/launch-template-name: "Karpenter-jacob-karpenter-demo-11759955701874416904"
-     foo: baarr
-     qux: baz
-     snord: flux
-     elrond: hubbard
+     larry: sounders
+     phil: swif
   cluster:
     name: ${CLUSTER_NAME}
     endpoint: $(aws eks describe-cluster --name ${CLUSTER_NAME} --query "cluster.endpoint" --output json)

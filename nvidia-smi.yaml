@@ -11,4 +11,4 @@ spec:
     - "nvidia-smi"
     resources:
       limits:
-        nvidia.com/gpu: 4
+        nvidia.com/gpu: 1

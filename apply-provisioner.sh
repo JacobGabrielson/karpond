@@ -15,8 +15,8 @@ spec:
      pikov: andropov
   ttlSecondsAfterEmpty: 30
   provider:
+    instanceProfile: KarpenterNodeInstanceProfile-${CLUSTER_NAME}
     cluster:
-      instanceProfile: KarpenterNodeInstanceProfile-${CLUSTER_NAME}
       name: ${CLUSTER_NAME}
       endpoint: $(aws eks describe-cluster --name ${CLUSTER_NAME} --query "cluster.endpoint" --output json)
 EOF

@@ -1,0 +1,1099 @@
+{"level":"info","ts":"2021-09-21T16:45:27.371Z","caller":"aws-k8s-agent/main.go:28","msg":"Starting L-IPAMD v1.7.5  ..."}
+{"level":"info","ts":"2021-09-21T16:45:27.464Z","caller":"aws-k8s-agent/main.go:41","msg":"Testing communication with server"}
+{"level":"info","ts":"2021-09-21T16:45:27.466Z","caller":"aws-k8s-agent/main.go:41","msg":"Successful communication with the Cluster! Cluster Version is: v1.20+. git version: v1.20.7-eks-d88609. git tree state: clean. commit: d886092805d5cc3a47ed5cf0c43de38ce442dfcb. platform: linux/amd64"}
+{"level":"debug","ts":"2021-09-21T16:45:27.467Z","caller":"ipamd/ipamd.go:292","msg":"Discovered region: us-west-2"}
+{"level":"info","ts":"2021-09-21T16:45:27.467Z","caller":"ipamd/ipamd.go:292","msg":"Custom networking false"}
+{"level":"debug","ts":"2021-09-21T16:45:27.468Z","caller":"awsutils/awsutils.go:313","msg":"Found availability zone: us-west-2a "}
+{"level":"debug","ts":"2021-09-21T16:45:27.469Z","caller":"awsutils/awsutils.go:313","msg":"Discovered the instance primary ip address: 192.168.176.89"}
+{"level":"debug","ts":"2021-09-21T16:45:27.469Z","caller":"awsutils/awsutils.go:313","msg":"Found instance-id: i-0d6197819ab0cb61f "}
+{"level":"debug","ts":"2021-09-21T16:45:27.469Z","caller":"awsutils/awsutils.go:313","msg":"Found instance-type: g4dn.xlarge "}
+{"level":"debug","ts":"2021-09-21T16:45:27.470Z","caller":"awsutils/awsutils.go:313","msg":"Found primary interface's MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:27.470Z","caller":"awsutils/awsutils.go:373","msg":"Discovered 1 interfaces."}
+{"level":"debug","ts":"2021-09-21T16:45:27.471Z","caller":"awsutils/awsutils.go:373","msg":"Found device-number: 0 "}
+{"level":"debug","ts":"2021-09-21T16:45:27.471Z","caller":"awsutils/awsutils.go:373","msg":"Found eni: eni-0e847447610538954 "}
+{"level":"debug","ts":"2021-09-21T16:45:27.471Z","caller":"awsutils/awsutils.go:373","msg":"eni-0e847447610538954 is the primary ENI of this instance"}
+{"level":"debug","ts":"2021-09-21T16:45:27.472Z","caller":"awsutils/awsutils.go:313","msg":"Found subnet-id: subnet-0480802ff69fa3f87 "}
+{"level":"info","ts":"2021-09-21T16:45:27.472Z","caller":"awsutils/awsutils.go:388","msg":"Found sg-08e61fb3eb05fd367, added to ipamd cache"}
+{"level":"debug","ts":"2021-09-21T16:45:27.473Z","caller":"awsutils/awsutils.go:442","msg":"Total number of interfaces found: 1 "}
+{"level":"debug","ts":"2021-09-21T16:45:27.473Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:27.474Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:27.474Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:27.474Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:27.475Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:27.475Z","caller":"awsutils/awsutils.go:388","msg":"Update ENI eni-0e847447610538954"}
+{"level":"info","ts":"2021-09-21T16:45:28.797Z","caller":"awsutils/awsutils.go:394","msg":"Found 192.168.0.0/16, added to ipamd cache"}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"ipamd/ipamd.go:300","msg":"Using WARM_ENI_TARGET 1"}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"ipamd/ipamd.go:310","msg":"Start node init"}
+{"level":"info","ts":"2021-09-21T16:45:28.797Z","caller":"ipamd/ipamd.go:337","msg":"Setting up host network... "}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"networkutils/network.go:222","msg":"Trying to find primary interface that has mac : 06:f0:72:29:e8:69"}
+{"level":"info","ts":"2021-09-21T16:45:28.797Z","caller":"wait/wait.go:133","msg":"Will attempt to clean up AWS CNI leaked ENIs after waiting 3m56s."}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"networkutils/network.go:222","msg":"Discovered interface: lo, mac: "}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"networkutils/network.go:222","msg":"Discovered interface: eth0, mac: 06:f0:72:29:e8:69"}
+{"level":"info","ts":"2021-09-21T16:45:28.797Z","caller":"networkutils/network.go:222","msg":"Discovered primary interface: eth0"}
+{"level":"info","ts":"2021-09-21T16:45:28.797Z","caller":"ipamd/ipamd.go:337","msg":"Skip updating RPF for primary interface: net/ipv4/conf/eth0/rp_filter"}
+{"level":"debug","ts":"2021-09-21T16:45:28.797Z","caller":"networkutils/network.go:249","msg":"Found the Link that uses mac address 06:f0:72:29:e8:69 and its index is 2 (attempt 1/5)"}
+{"level":"debug","ts":"2021-09-21T16:45:28.799Z","caller":"networkutils/network.go:319","msg":"Setup Host Network: loading existing iptables nat SNAT exclusion rules"}
+{"level":"debug","ts":"2021-09-21T16:45:28.801Z","caller":"ipamd/ipamd.go:337","msg":"Setup Host Network: iptables -N AWS-SNAT-CHAIN-0 -t nat"}
+{"level":"debug","ts":"2021-09-21T16:45:28.802Z","caller":"ipamd/ipamd.go:337","msg":"Setup Host Network: iptables -N AWS-SNAT-CHAIN-1 -t nat"}
+{"level":"debug","ts":"2021-09-21T16:45:28.803Z","caller":"ipamd/ipamd.go:337","msg":"Setup Host Network: iptables -A POSTROUTING -m comment --comment \"AWS SNAT CHAIN\" -j AWS-SNAT-CHAIN-0"}
+{"level":"debug","ts":"2021-09-21T16:45:28.803Z","caller":"ipamd/ipamd.go:337","msg":"Setup Host Network: iptables -A AWS-SNAT-CHAIN-0 ! -d {192.168.0.0/16 %!s(bool=false)} -t nat -j AWS-SNAT-CHAIN-1"}
+{"level":"debug","ts":"2021-09-21T16:45:28.803Z","caller":"ipamd/ipamd.go:337","msg":"Setup Host Network: synchronising SNAT stale rules"}
+{"level":"debug","ts":"2021-09-21T16:45:28.803Z","caller":"ipamd/ipamd.go:337","msg":"iptableRules: [nat/POSTROUTING rule first SNAT rules for non-VPC outbound traffic nat/AWS-SNAT-CHAIN-0 rule [0] AWS-SNAT-CHAIN nat/AWS-SNAT-CHAIN-1 rule last SNAT rule for non-VPC outbound traffic]"}
+{"level":"debug","ts":"2021-09-21T16:45:28.803Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : first SNAT rules for non-VPC outbound traffic"}
+{"level":"debug","ts":"2021-09-21T16:45:28.805Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : [0] AWS-SNAT-CHAIN"}
+{"level":"debug","ts":"2021-09-21T16:45:28.808Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : last SNAT rule for non-VPC outbound traffic"}
+{"level":"debug","ts":"2021-09-21T16:45:28.810Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : connmark for primary ENI"}
+{"level":"debug","ts":"2021-09-21T16:45:28.814Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : connmark restore for primary ENI"}
+{"level":"debug","ts":"2021-09-21T16:45:28.816Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : connmark restore for primary ENI from vlan"}
+{"level":"debug","ts":"2021-09-21T16:45:28.818Z","caller":"ipamd/ipamd.go:337","msg":"execute iptable rule : connmark restore for primary ENI from vlan"}
+{"level":"debug","ts":"2021-09-21T16:45:28.820Z","caller":"awsutils/awsutils.go:1094","msg":"Total number of interfaces found: 1 "}
+{"level":"debug","ts":"2021-09-21T16:45:28.820Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:28.821Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:28.821Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:28.822Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:28.822Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:310","msg":"DescribeAllENIs success: ENIs: 1, tagged: 0"}
+{"level":"debug","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:310","msg":"Discovered ENI eni-0e847447610538954, trying to set it up"}
+{"level":"debug","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:742","msg":"DataStore Add an ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:763","msg":"IP Address Pool stats: total: 0, assigned: 0"}
+{"level":"info","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:310","msg":"ENI eni-0e847447610538954 set up."}
+{"level":"info","ts":"2021-09-21T16:45:28.987Z","caller":"ipamd/ipamd.go:378","msg":"Reading ipam state from CRI"}
+{"level":"debug","ts":"2021-09-21T16:45:28.987Z","caller":"datastore/data_store.go:294","msg":"Getting running pod sandboxes from \"unix:///var/run/dockershim.sock\""}
+{"level":"debug","ts":"2021-09-21T16:45:28.988Z","caller":"datastore/data_store.go:294","msg":"Ignoring sandbox aafd758baf4e3feefe77b48986003c30743eade0ae3a7561a6bd71778d58b932 with non-pod netns mode NODE"}
+{"level":"debug","ts":"2021-09-21T16:45:28.989Z","caller":"datastore/data_store.go:294","msg":"Ignoring sandbox 10684a390803321116432381cd4f086cf88a4ba0589713da846ceed65ca59d4d with non-pod netns mode NODE"}
+{"level":"debug","ts":"2021-09-21T16:45:28.989Z","caller":"ipamd/ipamd.go:378","msg":"Completed ipam state recovery"}
+{"level":"debug","ts":"2021-09-21T16:45:28.996Z","caller":"ipamd/ipamd.go:396","msg":"Deleting label \"vpc.amazonaws.com/eniConfig\""}
+{"level":"info","ts":"2021-09-21T16:45:29.004Z","caller":"ipamd/ipamd.go:396","msg":"Updated node ip-192-168-176-89.us-west-2.compute.internal with label \"vpc.amazonaws.com/eniConfig\": \"\""}
+{"level":"debug","ts":"2021-09-21T16:45:29.004Z","caller":"ipamd/ipamd.go:709","msg":"Found ENI eni-0e847447610538954 that has less than the maximum number of IP addresses allocated: cur=0, max=9"}
+{"level":"info","ts":"2021-09-21T16:45:29.004Z","caller":"ipamd/ipamd.go:713","msg":"Trying to allocate 9 IP addresses on ENI eni-0e847447610538954"}
+{"level":"info","ts":"2021-09-21T16:45:29.611Z","caller":"ipamd/ipamd.go:713","msg":"Allocated 9 private IP addresses"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.170.120 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.176.58 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.164.218 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.181.108 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.186.158 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.183.32 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.181.129 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.185.129 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0e847447610538954)'s IP 192.168.175.34 to datastore"}
+{"level":"debug","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:729","msg":"IP Address Pool stats: total: 9, assigned: 0"}
+{"level":"debug","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:422","msg":"Successfully increased IP pool, total: 9, used: 0"}
+{"level":"debug","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/ipamd.go:641","msg":"IP pool stats: total = 9, used = 0, c.maxIPsPerENI = 9"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"aws-k8s-agent/main.go:69","msg":"Serving RPC Handler version v1.7.5 on 127.0.0.1:50051"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"runtime/asm_amd64.s:1357","msg":"Serving metrics on port 61678"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"ipamd/introspect.go:61","msg":"Serving introspection endpoints on 127.0.0.1:61679"}
+{"level":"info","ts":"2021-09-21T16:45:29.749Z","caller":"runtime/asm_amd64.s:1357","msg":"Setting up shutdown hook."}
+{"level":"info","ts":"2021-09-21T16:45:36.126Z","caller":"rpc/rpc.pb.go:486","msg":"Received AddNetwork for NS /var/run/netns/cni-44235c31-11a4-93e9-777a-d0b091eee488, Sandbox b02cf08a1050f1a0c4ab0d77f3261beeb3636ebdbcdb0b8e7dc4c73eaeffa15e, ifname eth0"}
+{"level":"debug","ts":"2021-09-21T16:45:36.126Z","caller":"rpc/rpc.pb.go:486","msg":"AddNetworkRequest: ClientVersion:\"v1.7.5\" K8S_POD_NAME:\"fake-gpu-user\" K8S_POD_NAMESPACE:\"default\" K8S_POD_INFRA_CONTAINER_ID:\"b02cf08a1050f1a0c4ab0d77f3261beeb3636ebdbcdb0b8e7dc4c73eaeffa15e\" ContainerID:\"b02cf08a1050f1a0c4ab0d77f3261beeb3636ebdbcdb0b8e7dc4c73eaeffa15e\" IfName:\"eth0\" NetworkName:\"aws-cni\" Netns:\"/var/run/netns/cni-44235c31-11a4-93e9-777a-d0b091eee488\" "}
+{"level":"debug","ts":"2021-09-21T16:45:36.126Z","caller":"ipamd/rpc_handler.go:142","msg":"AssignIPv4Address: IP address pool stats: total: 9, assigned 0"}
+{"level":"info","ts":"2021-09-21T16:45:36.126Z","caller":"datastore/data_store.go:499","msg":"AssignPodIPv4Address: Assign IP 192.168.176.58 to sandbox aws-cni/b02cf08a1050f1a0c4ab0d77f3261beeb3636ebdbcdb0b8e7dc4c73eaeffa15e/eth0"}
+{"level":"debug","ts":"2021-09-21T16:45:36.126Z","caller":"rpc/rpc.pb.go:486","msg":"VPC CIDR 192.168.0.0/16"}
+{"level":"info","ts":"2021-09-21T16:45:36.126Z","caller":"rpc/rpc.pb.go:486","msg":"Send AddNetworkReply: IPv4Addr 192.168.176.58, DeviceNumber: 0, err: <nil>"}
+{"level":"debug","ts":"2021-09-21T16:45:37.250Z","caller":"ipamd/ipamd.go:852","msg":"IP pool stats: total = 9, used = 1, c.maxIPsPerENI = 9"}
+{"level":"debug","ts":"2021-09-21T16:45:37.250Z","caller":"ipamd/ipamd.go:482","msg":"IP pool is too low: available (8) < ENI target (1) * addrsPerENI (9)"}
+{"level":"debug","ts":"2021-09-21T16:45:37.250Z","caller":"ipamd/ipamd.go:483","msg":"Starting to increase IP pool size"}
+{"level":"info","ts":"2021-09-21T16:45:37.250Z","caller":"awsutils/awsutils.go:724","msg":"Using same config as the primary interface for the new ENI"}
+{"level":"info","ts":"2021-09-21T16:45:37.250Z","caller":"awsutils/awsutils.go:724","msg":"Creating ENI with security groups: [sg-08e61fb3eb05fd367] in subnet: subnet-0480802ff69fa3f87"}
+{"level":"info","ts":"2021-09-21T16:45:37.684Z","caller":"awsutils/awsutils.go:724","msg":"Created a new ENI: eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:37.753Z","caller":"awsutils/awsutils.go:770","msg":"Discovered device number is used: 0"}
+{"level":"debug","ts":"2021-09-21T16:45:37.753Z","caller":"awsutils/awsutils.go:770","msg":"Found a free device number: 1"}
+{"level":"debug","ts":"2021-09-21T16:45:38.509Z","caller":"awsutils/awsutils.go:740","msg":"Trying to tag newly created ENI: key=node.k8s.amazonaws.com/instance_id, value=i-0d6197819ab0cb61f"}
+{"level":"debug","ts":"2021-09-21T16:45:38.622Z","caller":"retry/retry.go:69","msg":"Successfully tagged ENI: eni-0eb1aa3afcb12765c"}
+{"level":"info","ts":"2021-09-21T16:45:38.989Z","caller":"ipamd/ipamd.go:664","msg":"Successfully created and attached a new ENI eni-0eb1aa3afcb12765c to instance"}
+{"level":"info","ts":"2021-09-21T16:45:38.989Z","caller":"ipamd/ipamd.go:677","msg":"Trying to allocate 9 IP addresses on ENI eni-0eb1aa3afcb12765c"}
+{"level":"info","ts":"2021-09-21T16:45:39.445Z","caller":"ipamd/ipamd.go:677","msg":"Allocated 9 private IP addresses"}
+{"level":"debug","ts":"2021-09-21T16:45:39.446Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:39.446Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.447Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:39.447Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.452Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.452Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.455Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:39.455Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:39.455Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.456Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.456Z","caller":"retry/retry.go:69","msg":"No secondary IPv4 addresses available yet on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:39.558Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:39.558Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.559Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:39.560Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.560Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.560Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.561Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:39.561Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:39.562Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.562Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.562Z","caller":"retry/retry.go:69","msg":"No secondary IPv4 addresses available yet on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:39.791Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:39.791Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.792Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:39.793Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.793Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:39.793Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.794Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:39.794Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:39.795Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.795Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:39.795Z","caller":"retry/retry.go:69","msg":"No secondary IPv4 addresses available yet on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:40.225Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:40.225Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:40.226Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:40.227Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:40.227Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:40.227Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:40.228Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:40.228Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:40.229Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:40.229Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:40.229Z","caller":"retry/retry.go:69","msg":"No secondary IPv4 addresses available yet on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:41.059Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:41.059Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:41.060Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:41.060Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:41.061Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:41.061Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:41.062Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:41.062Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:41.062Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:41.063Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:41.063Z","caller":"retry/retry.go:69","msg":"No secondary IPv4 addresses available yet on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:45:42.768Z","caller":"awsutils/awsutils.go:1348","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:45:42.768Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:42.769Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:45:42.769Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:42.770Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:45:42.770Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:42.771Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:45:42.771Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:45:42.771Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:42.772Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:45:42.772Z","caller":"ipamd/ipamd.go:742","msg":"DataStore Add an ENI eni-0eb1aa3afcb12765c"}
+{"level":"info","ts":"2021-09-21T16:45:42.772Z","caller":"networkutils/network.go:703","msg":"Setting up network for an ENI with IP address 192.168.168.10, MAC address 06:1e:ef:b5:38:f9, CIDR 192.168.160.0/19 and route table 2"}
+{"level":"debug","ts":"2021-09-21T16:45:42.772Z","caller":"networkutils/network.go:714","msg":"Found the Link that uses mac address 06:1e:ef:b5:38:f9 and its index is 4 (attempt 1/5)"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"networkutils/network.go:703","msg":"Setting up ENI's primary IP 192.168.168.10"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"networkutils/network.go:703","msg":"Adding IP address 192.168.168.10/19"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"networkutils/network.go:703","msg":"Setting up ENI's default gateway 192.168.160.1, table 2, linkIndex 4"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"retry/retry.go:69","msg":"Successfully added/replaced route to be 192.168.160.1/0"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"retry/retry.go:69","msg":"Successfully added/replaced route to be 0.0.0.0/0"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.189.120 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.172.121 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.163.25 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.177.93 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.166.93 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.161.126 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.168.145 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.190.66 to datastore"}
+{"level":"info","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:773","msg":"Added ENI(eni-0eb1aa3afcb12765c)'s IP 192.168.188.119 to datastore"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:763","msg":"IP Address Pool stats: total: 18, assigned: 1"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:628","msg":"Successfully increased IP pool, total: 18, used: 1"}
+{"level":"debug","ts":"2021-09-21T16:45:42.781Z","caller":"ipamd/ipamd.go:641","msg":"IP pool stats: total = 18, used = 1, c.maxIPsPerENI = 9"}
+{"level":"info","ts":"2021-09-21T16:45:44.431Z","caller":"rpc/rpc.pb.go:486","msg":"Received AddNetwork for NS /var/run/netns/cni-359e83eb-1a53-9bd4-df5a-b0f11a671566, Sandbox adebb26e48dfddd88756a603fa8466e6ef846dda3c8c7c7c4469a42b7615e1e6, ifname eth0"}
+{"level":"debug","ts":"2021-09-21T16:45:44.431Z","caller":"rpc/rpc.pb.go:486","msg":"AddNetworkRequest: ClientVersion:\"v1.7.5\" K8S_POD_NAME:\"nvidia-device-plugin-daemonset-tl9sb\" K8S_POD_NAMESPACE:\"kube-system\" K8S_POD_INFRA_CONTAINER_ID:\"adebb26e48dfddd88756a603fa8466e6ef846dda3c8c7c7c4469a42b7615e1e6\" ContainerID:\"adebb26e48dfddd88756a603fa8466e6ef846dda3c8c7c7c4469a42b7615e1e6\" IfName:\"eth0\" NetworkName:\"aws-cni\" Netns:\"/var/run/netns/cni-359e83eb-1a53-9bd4-df5a-b0f11a671566\" "}
+{"level":"debug","ts":"2021-09-21T16:45:44.431Z","caller":"ipamd/rpc_handler.go:142","msg":"AssignIPv4Address: IP address pool stats: total: 18, assigned 1"}
+{"level":"info","ts":"2021-09-21T16:45:44.431Z","caller":"datastore/data_store.go:499","msg":"AssignPodIPv4Address: Assign IP 192.168.164.218 to sandbox aws-cni/adebb26e48dfddd88756a603fa8466e6ef846dda3c8c7c7c4469a42b7615e1e6/eth0"}
+{"level":"debug","ts":"2021-09-21T16:45:44.431Z","caller":"rpc/rpc.pb.go:486","msg":"VPC CIDR 192.168.0.0/16"}
+{"level":"info","ts":"2021-09-21T16:45:44.431Z","caller":"rpc/rpc.pb.go:486","msg":"Send AddNetworkReply: IPv4Addr 192.168.164.218, DeviceNumber: 0, err: <nil>"}
+{"level":"debug","ts":"2021-09-21T16:46:45.284Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m2.502762239s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:46:45.285Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:46:45.285Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:46:45.286Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:46:45.287Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:46:45.287Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:46:45.287Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:46:45.288Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:46:45.288Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:46:45.289Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:47:45.292Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007788442s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:47:45.293Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:47:45.293Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:47:45.294Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:47:45.294Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:47:45.295Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:47:45.295Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:47:45.296Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:47:45.296Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:47:45.297Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:48:45.300Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007836525s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:48:45.301Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:48:45.301Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:48:45.302Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:48:45.303Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:48:45.304Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:48:45.304Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:48:45.305Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:48:45.305Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:48:45.305Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:48:45.306Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:49:24.797Z","caller":"wait/wait.go:133","msg":"Checking for leaked AWS CNI ENIs."}
+{"level":"debug","ts":"2021-09-21T16:49:24.945Z","caller":"awsutils/awsutils.go:1421","msg":"No AWS CNI leaked ENIs found."}
+{"level":"debug","ts":"2021-09-21T16:49:45.309Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008840675s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:49:45.309Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:49:45.310Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:49:45.311Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:49:45.311Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:49:45.312Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:49:45.312Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:49:45.313Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:49:45.313Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:49:45.314Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:50:45.317Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008260463s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:50:45.318Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:50:45.318Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:50:45.319Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:50:45.320Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:50:45.321Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:50:45.321Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:50:45.322Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:50:45.322Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:50:45.323Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:51:45.326Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.009159121s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:51:45.327Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:51:45.327Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:51:45.328Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:51:45.329Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:51:45.329Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:51:45.329Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:51:45.330Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:51:45.330Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:51:45.331Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:52:45.334Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007668035s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:52:45.335Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:52:45.335Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:52:45.336Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:52:45.337Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:52:45.337Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:52:45.337Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:52:45.338Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:52:45.338Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:52:45.339Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:53:45.342Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008228893s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:53:45.343Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:53:45.343Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:53:45.344Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:53:45.344Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:53:45.345Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:53:45.345Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:53:45.346Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:53:45.346Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:53:45.346Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:53:45.347Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:54:45.350Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007565483s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:54:45.350Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:54:45.350Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:54:45.352Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:54:45.352Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:54:45.353Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:54:45.353Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:54:45.354Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:54:45.354Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:54:45.355Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:55:45.358Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008487355s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:55:45.359Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:55:45.359Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:55:45.360Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:55:45.360Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:55:45.361Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:55:45.361Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:55:45.362Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:55:45.362Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:55:45.362Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:55:45.363Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:56:45.366Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007487898s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:56:45.366Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:56:45.366Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:56:45.367Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:56:45.368Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:56:45.368Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:56:45.368Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:56:45.369Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:56:45.369Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:56:45.370Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:57:45.373Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007482275s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:57:45.374Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:57:45.374Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:57:45.375Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:57:45.375Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:57:45.376Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:57:45.376Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:57:45.377Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:57:45.377Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:57:45.377Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:57:45.378Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:58:45.381Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.00764112s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:58:45.382Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:58:45.382Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:58:45.383Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:58:45.383Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:58:45.384Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:58:45.384Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:58:45.385Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:58:45.385Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:58:45.385Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:58:45.386Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T16:59:45.388Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.00770119s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T16:59:45.389Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T16:59:45.389Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:59:45.391Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T16:59:45.391Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:59:45.392Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T16:59:45.392Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:59:45.393Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:59:45.393Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T16:59:45.393Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T16:59:45.394Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:00:45.397Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008304539s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:00:45.399Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:00:45.399Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:00:45.400Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:00:45.400Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:00:45.401Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:00:45.401Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:00:45.402Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:00:45.402Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:00:45.402Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:00:45.403Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:01:45.406Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008907613s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:01:45.407Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:01:45.407Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:01:45.408Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:01:45.408Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:01:45.409Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:01:45.409Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:01:45.410Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:01:45.410Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:01:45.410Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:01:45.411Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:02:45.414Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007899621s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:02:45.414Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:02:45.414Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:02:45.415Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:02:45.416Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:02:45.416Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:02:45.416Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:02:45.417Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:02:45.417Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:02:45.418Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:03:45.421Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007574755s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:03:45.422Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:03:45.422Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:03:45.423Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:03:45.423Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:03:45.424Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:03:45.424Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:03:45.425Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:03:45.425Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:03:45.425Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:03:45.426Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:04:45.429Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007638754s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:04:45.432Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:04:45.432Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:04:45.433Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:04:45.433Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:04:45.434Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:04:45.434Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:04:45.435Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:04:45.435Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:04:45.435Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:04:45.436Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:05:45.439Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.009937719s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:05:45.439Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:05:45.440Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:05:45.443Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:05:45.444Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:05:45.444Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:05:45.444Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:05:45.445Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:05:45.445Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:05:45.446Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:06:45.449Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.010113983s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:06:45.450Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:06:45.450Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:06:45.452Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:06:45.452Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:06:45.453Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:06:45.453Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:06:45.455Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:06:45.455Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:06:45.455Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:06:45.456Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:07:45.459Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.010362017s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:07:45.460Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:07:45.460Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:07:45.461Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:07:45.462Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:07:45.462Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:07:45.462Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:07:45.463Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:07:45.463Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:07:45.464Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:08:45.467Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007805126s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:08:45.471Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:08:45.471Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:08:45.473Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:08:45.473Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:08:45.474Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:08:45.474Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:08:45.475Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:08:45.475Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:08:45.475Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:08:45.476Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:09:45.478Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.011474552s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:09:45.479Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:09:45.479Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:09:45.480Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:09:45.481Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:09:45.481Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:09:45.481Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:09:45.482Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:09:45.482Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:09:45.483Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:10:45.486Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007615939s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:10:45.487Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:10:45.487Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:10:45.488Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:10:45.489Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:10:45.489Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:10:45.489Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:10:45.490Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:10:45.490Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:10:45.491Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:11:45.494Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.0077831s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:11:45.495Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:11:45.495Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:11:45.496Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:11:45.497Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:11:45.498Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:11:45.498Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:11:45.499Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:11:45.499Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:11:45.499Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:11:45.500Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:12:45.502Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.00856182s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:12:45.503Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:12:45.503Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:12:45.504Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:12:45.505Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:12:45.505Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:12:45.505Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:12:45.506Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:12:45.506Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:12:45.507Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:13:45.510Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007376573s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:13:45.511Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:13:45.511Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:13:45.512Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:13:45.513Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:13:45.513Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:13:45.513Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:13:45.515Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:13:45.515Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:13:45.515Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:13:45.516Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:14:45.519Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.00885556s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:14:45.519Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:14:45.519Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:14:45.521Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:14:45.521Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:14:45.522Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:14:45.522Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:14:45.523Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:14:45.523Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:14:45.523Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:14:45.524Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:15:45.526Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007619262s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:15:45.527Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:15:45.527Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:15:45.529Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:15:45.529Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:15:45.530Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:15:45.530Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:15:45.532Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:15:45.532Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:15:45.532Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:15:45.533Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:16:45.536Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.009571654s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:16:45.537Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:16:45.537Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:16:45.538Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:16:45.538Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:16:45.539Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:16:45.539Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:16:45.540Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:16:45.540Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:16:45.540Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:16:45.541Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:17:45.543Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007534846s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:17:45.544Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:17:45.544Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:17:45.546Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:17:45.546Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:17:45.547Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:17:45.547Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:17:45.548Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:17:45.548Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:17:45.548Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:17:45.549Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:18:45.552Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008237015s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:18:45.552Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:18:45.552Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:18:45.553Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:18:45.554Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:18:45.554Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:18:45.554Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:18:45.555Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:18:45.555Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:18:45.556Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:19:45.559Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007512115s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:19:45.560Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:19:45.560Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:19:45.561Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:19:45.562Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:19:45.563Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:19:45.563Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:19:45.564Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:19:45.564Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:19:45.565Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:20:45.568Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008882362s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:20:45.569Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:20:45.569Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:20:45.570Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:20:45.570Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:20:45.571Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:20:45.571Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:20:45.572Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:20:45.572Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:20:45.572Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:20:45.573Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:21:45.575Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007397967s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:21:45.576Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:21:45.576Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:21:45.577Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:21:45.578Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:21:45.579Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:21:45.579Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:21:45.580Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:21:45.580Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:21:45.581Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:22:45.584Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008482612s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:22:45.585Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:22:45.585Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:22:45.586Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:22:45.586Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:22:45.587Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:22:45.587Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:22:45.588Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:22:45.588Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:22:45.588Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:22:45.589Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:23:45.591Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007449482s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:23:45.595Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:23:45.595Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:23:45.596Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:23:45.597Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:23:45.597Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:23:45.597Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:23:45.598Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:23:45.598Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:23:45.604Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:24:45.607Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.015504232s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:24:45.610Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:24:45.610Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:24:45.612Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:24:45.612Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:24:45.613Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:24:45.613Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:24:45.614Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:24:45.614Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:24:45.614Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:24:45.615Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:25:45.617Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.010687031s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:25:45.618Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:25:45.618Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:25:45.619Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:25:45.620Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:25:45.620Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:25:45.620Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:25:45.621Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:25:45.621Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:25:45.622Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:26:45.625Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007440874s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:26:45.626Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:26:45.626Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:26:45.627Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:26:45.627Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:26:45.628Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:26:45.628Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:26:45.629Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:26:45.629Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:26:45.631Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:26:45.632Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:27:45.634Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.009569997s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:27:45.635Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:27:45.635Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:27:45.636Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:27:45.637Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:27:45.637Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:27:45.637Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:27:45.638Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:27:45.638Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:27:45.639Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:28:45.642Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007381909s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:28:45.643Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:28:45.643Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:28:45.644Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:28:45.644Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:28:45.645Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:28:45.645Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:28:45.647Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:28:45.647Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:28:45.648Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:29:45.651Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.00897932s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:29:45.652Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:29:45.653Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:29:45.654Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:29:45.654Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:29:45.655Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:29:45.655Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:29:45.656Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:29:45.656Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:29:45.656Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:29:45.657Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:30:45.659Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008479803s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:30:45.660Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:30:45.660Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:30:45.661Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:30:45.662Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:30:45.662Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:30:45.662Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:30:45.663Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:30:45.663Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:30:45.664Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:31:45.667Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007424805s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:31:45.668Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:31:45.668Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:31:45.669Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:31:45.670Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:31:45.671Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:31:45.671Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:31:45.672Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:31:45.672Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:31:45.673Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:31:45.674Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:32:45.677Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.009952641s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:32:45.678Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:32:45.678Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:32:45.679Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:32:45.680Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:32:45.681Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:32:45.681Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:32:45.683Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:32:45.683Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:32:45.683Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:32:45.684Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:33:45.687Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.010384862s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:33:45.688Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:33:45.688Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:33:45.689Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:33:45.690Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:33:45.690Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:33:45.690Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:33:45.691Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:33:45.691Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:33:45.691Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:33:45.692Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:34:45.695Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007562203s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:34:45.696Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:34:45.696Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:34:45.697Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:34:45.698Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:34:45.699Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:34:45.699Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:34:45.700Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:34:45.700Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:34:45.700Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:34:45.701Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:35:45.704Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.008944551s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:35:45.704Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:35:45.704Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:35:45.706Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:35:45.706Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:35:45.707Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:35:45.707Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:35:45.708Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:35:45.708Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:35:45.708Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:35:45.708Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:35:45.709Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:36:45.711Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007591371s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:36:45.712Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:36:45.712Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:36:45.713Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:36:45.714Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:36:45.714Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:36:45.714Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:36:45.715Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:36:45.715Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:36:45.715Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:36:45.716Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:37:45.719Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007540203s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:37:45.719Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:37:45.719Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:37:45.720Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:37:45.721Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:37:45.721Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:37:45.721Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:37:45.722Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:37:45.722Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:37:45.723Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+{"level":"debug","ts":"2021-09-21T17:38:45.726Z","caller":"ipamd/ipamd.go:476","msg":"Reconciling ENI/IP pool info because time since last 1m0.007210697s <= 1m0s"}
+{"level":"debug","ts":"2021-09-21T17:38:45.727Z","caller":"ipamd/ipamd.go:908","msg":"Total number of interfaces found: 2 "}
+{"level":"debug","ts":"2021-09-21T17:38:45.727Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:38:45.728Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0eb1aa3afcb12765c, MAC 06:1e:ef:b5:38:f9, device 1"}
+{"level":"debug","ts":"2021-09-21T17:38:45.728Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:38:45.729Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.168.10 192.168.189.120 192.168.172.121 192.168.163.25 192.168.177.93 192.168.166.93 192.168.161.126 192.168.168.145 192.168.190.66 192.168.188.119] on ENI 06:1e:ef:b5:38:f9"}
+{"level":"debug","ts":"2021-09-21T17:38:45.729Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI MAC address: 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:38:45.730Z","caller":"awsutils/awsutils.go:583","msg":"Using device number 0 for primary ENI: eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:38:45.730Z","caller":"awsutils/awsutils.go:569","msg":"Found ENI: eni-0e847447610538954, MAC 06:f0:72:29:e8:69, device 0"}
+{"level":"debug","ts":"2021-09-21T17:38:45.730Z","caller":"awsutils/awsutils.go:589","msg":"Found CIDR 192.168.160.0/19 for ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"awsutils/awsutils.go:589","msg":"Found IP addresses [192.168.176.89 192.168.170.120 192.168.176.58 192.168.164.218 192.168.181.108 192.168.186.158 192.168.183.32 192.168.181.129 192.168.185.129 192.168.175.34] on ENI 06:f0:72:29:e8:69"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0eb1aa3afcb12765c IP pool"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.168.10 on ENI eni-0eb1aa3afcb12765c"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:476","msg":"Reconcile existing ENI eni-0e847447610538954 IP pool"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:1019","msg":"Reconcile and skip primary IP 192.168.176.89 on ENI eni-0e847447610538954"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:476","msg":"Successfully Reconciled ENI/IP pool"}
+{"level":"debug","ts":"2021-09-21T17:38:45.731Z","caller":"ipamd/ipamd.go:476","msg":"IP Address Pool stats: total: 18, assigned: 2"}
+

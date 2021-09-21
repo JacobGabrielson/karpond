@@ -26,8 +26,9 @@ if [[ $1 == "podWatch" ]]; then
     exit 0
 fi
 
-tmux split-window -l 50% -h "stern ^karpenter --all-namespaces"
-tmux split-window -l 50% -v -d "stern ^nvidia --all-namespaces"
-tmux split-window -t $TMUX_PANE -l 50% -v -d "watch -d -n 1 kubectl get nodes -o wide"
-tmux split-window -t $TMUX_PANE -l 50% -v -d "watch -d -n 5 $0 podWatch"
+tmux split-window -l 50% -h "kubectl logs -f -n karpenter -l 'karpenter in (controller,webhook)'"
+tmux split-window -l 50% -v -d "kubectl -n kube-system logs -f -l name=nvidia-device-plugin-ds"
+tmux split-window -t $TMUX_PANE -l 30% -v -d "watch -d -n 1 kubectl get nodes -o wide"
+tmux split-window -t $TMUX_PANE -l 30% -v -d "watch -d -n 5 $0 podWatch"
 tmux split-window -t $TMUX_PANE -l 7 -v -d "watch -d -n 1 kubectl get pods -n karpenter -o wide"
+tmux split-window -t $TMUX_PANE -l 8 -v -d "watch -d -n 1 kubectl get pods --selector=name=nvidia-device-plugin-ds -n kube-system"

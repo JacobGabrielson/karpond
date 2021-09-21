@@ -1,0 +1,605 @@
+cloud-init-output.log:Created symlink from /etc/systemd/system/multi-user.target.wants/kubelet.service to /etc/systemd/system/kubelet.service.
+messages:Sep 21 16:44:41 ip-192-168-176-89 cloud-init: Created symlink from /etc/systemd/system/multi-user.target.wants/kubelet.service to /etc/systemd/system/kubelet.service.
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: Flag --cloud-provider has been deprecated, will be removed in 1.23, in favor of removing cloud provider code from Kubelet.
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243678    5582 flags.go:59] FLAG: --add-dir-header="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243723    5582 flags.go:59] FLAG: --address="0.0.0.0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243731    5582 flags.go:59] FLAG: --allowed-unsafe-sysctls="[]"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243742    5582 flags.go:59] FLAG: --alsologtostderr="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243747    5582 flags.go:59] FLAG: --anonymous-auth="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243754    5582 flags.go:59] FLAG: --application-metrics-count-limit="100"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243760    5582 flags.go:59] FLAG: --authentication-token-webhook="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243765    5582 flags.go:59] FLAG: --authentication-token-webhook-cache-ttl="2m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243772    5582 flags.go:59] FLAG: --authorization-mode="AlwaysAllow"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243779    5582 flags.go:59] FLAG: --authorization-webhook-cache-authorized-ttl="5m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243784    5582 flags.go:59] FLAG: --authorization-webhook-cache-unauthorized-ttl="30s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243789    5582 flags.go:59] FLAG: --azure-container-registry-config=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243793    5582 flags.go:59] FLAG: --boot-id-file="/proc/sys/kernel/random/boot_id"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243798    5582 flags.go:59] FLAG: --bootstrap-kubeconfig=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243803    5582 flags.go:59] FLAG: --cert-dir="/var/lib/kubelet/pki"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243808    5582 flags.go:59] FLAG: --cgroup-driver="cgroupfs"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243812    5582 flags.go:59] FLAG: --cgroup-root=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243819    5582 flags.go:59] FLAG: --cgroups-per-qos="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243823    5582 flags.go:59] FLAG: --chaos-chance="0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243831    5582 flags.go:59] FLAG: --client-ca-file=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243836    5582 flags.go:59] FLAG: --cloud-config=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243841    5582 flags.go:59] FLAG: --cloud-provider="aws"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243846    5582 flags.go:59] FLAG: --cluster-dns="[]"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243862    5582 flags.go:59] FLAG: --cluster-domain=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243868    5582 flags.go:59] FLAG: --cni-bin-dir="/opt/cni/bin"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243874    5582 flags.go:59] FLAG: --cni-cache-dir="/var/lib/cni/cache"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243879    5582 flags.go:59] FLAG: --cni-conf-dir="/etc/cni/net.d"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243885    5582 flags.go:59] FLAG: --config="/etc/kubernetes/kubelet/kubelet-config.json"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243891    5582 flags.go:59] FLAG: --container-hints="/etc/cadvisor/container_hints.json"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243898    5582 flags.go:59] FLAG: --container-log-max-files="5"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243905    5582 flags.go:59] FLAG: --container-log-max-size="10Mi"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243910    5582 flags.go:59] FLAG: --container-runtime="remote"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243916    5582 flags.go:59] FLAG: --container-runtime-endpoint="unix:///run/dockershim.sock"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243922    5582 flags.go:59] FLAG: --containerd="/run/containerd/containerd.sock"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243928    5582 flags.go:59] FLAG: --containerd-namespace="k8s.io"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243934    5582 flags.go:59] FLAG: --contention-profiling="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243940    5582 flags.go:59] FLAG: --cpu-cfs-quota="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243946    5582 flags.go:59] FLAG: --cpu-cfs-quota-period="100ms"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243952    5582 flags.go:59] FLAG: --cpu-manager-policy="none"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243967    5582 flags.go:59] FLAG: --cpu-manager-reconcile-period="10s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243972    5582 flags.go:59] FLAG: --docker="unix:///var/run/docker.sock"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243978    5582 flags.go:59] FLAG: --docker-endpoint="unix:///var/run/docker.sock"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243983    5582 flags.go:59] FLAG: --docker-env-metadata-whitelist=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243991    5582 flags.go:59] FLAG: --docker-only="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.243996    5582 flags.go:59] FLAG: --docker-root="/var/lib/docker"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244001    5582 flags.go:59] FLAG: --docker-tls="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244008    5582 flags.go:59] FLAG: --docker-tls-ca="ca.pem"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244013    5582 flags.go:59] FLAG: --docker-tls-cert="cert.pem"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244019    5582 flags.go:59] FLAG: --docker-tls-key="key.pem"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244025    5582 flags.go:59] FLAG: --dynamic-config-dir=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244032    5582 flags.go:59] FLAG: --enable-cadvisor-json-endpoints="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244038    5582 flags.go:59] FLAG: --enable-controller-attach-detach="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244044    5582 flags.go:59] FLAG: --enable-debugging-handlers="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244475    5582 flags.go:59] FLAG: --enable-load-reader="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244482    5582 flags.go:59] FLAG: --enable-server="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244491    5582 flags.go:59] FLAG: --enforce-node-allocatable="[pods]"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244502    5582 flags.go:59] FLAG: --event-burst="10"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244508    5582 flags.go:59] FLAG: --event-qps="5"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244514    5582 flags.go:59] FLAG: --event-storage-age-limit="default=0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244520    5582 flags.go:59] FLAG: --event-storage-event-limit="default=0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244526    5582 flags.go:59] FLAG: --eviction-hard="imagefs.available<15%,memory.available<100Mi,nodefs.available<10%,nodefs.inodesFree<5%"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244560    5582 flags.go:59] FLAG: --eviction-max-pod-grace-period="0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244566    5582 flags.go:59] FLAG: --eviction-minimum-reclaim=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244580    5582 flags.go:59] FLAG: --eviction-pressure-transition-period="5m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244588    5582 flags.go:59] FLAG: --eviction-soft=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244593    5582 flags.go:59] FLAG: --eviction-soft-grace-period=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244599    5582 flags.go:59] FLAG: --exit-on-lock-contention="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244604    5582 flags.go:59] FLAG: --experimental-allocatable-ignore-eviction="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244610    5582 flags.go:59] FLAG: --experimental-bootstrap-kubeconfig=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244615    5582 flags.go:59] FLAG: --experimental-check-node-capabilities-before-mount="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244621    5582 flags.go:59] FLAG: --experimental-dockershim-root-directory="/var/lib/dockershim"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244631    5582 flags.go:59] FLAG: --experimental-kernel-memcg-notification="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244636    5582 flags.go:59] FLAG: --experimental-logging-sanitization="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244642    5582 flags.go:59] FLAG: --experimental-mounter-path=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244647    5582 flags.go:59] FLAG: --fail-swap-on="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244652    5582 flags.go:59] FLAG: --feature-gates=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244660    5582 flags.go:59] FLAG: --file-check-frequency="20s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244666    5582 flags.go:59] FLAG: --global-housekeeping-interval="1m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244672    5582 flags.go:59] FLAG: --hairpin-mode="promiscuous-bridge"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244678    5582 flags.go:59] FLAG: --healthz-bind-address="127.0.0.1"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244684    5582 flags.go:59] FLAG: --healthz-port="10248"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244693    5582 flags.go:59] FLAG: --help="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244699    5582 flags.go:59] FLAG: --hostname-override=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244705    5582 flags.go:59] FLAG: --housekeeping-interval="10s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244711    5582 flags.go:59] FLAG: --http-check-frequency="20s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244717    5582 flags.go:59] FLAG: --image-credential-provider-bin-dir=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244722    5582 flags.go:59] FLAG: --image-credential-provider-config=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244730    5582 flags.go:59] FLAG: --image-gc-high-threshold="85"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244735    5582 flags.go:59] FLAG: --image-gc-low-threshold="80"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244739    5582 flags.go:59] FLAG: --image-pull-progress-deadline="1m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244744    5582 flags.go:59] FLAG: --image-service-endpoint=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244750    5582 flags.go:59] FLAG: --iptables-drop-bit="15"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244755    5582 flags.go:59] FLAG: --iptables-masquerade-bit="14"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244761    5582 flags.go:59] FLAG: --keep-terminated-pod-volumes="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244766    5582 flags.go:59] FLAG: --kernel-memcg-notification="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244772    5582 flags.go:59] FLAG: --kube-api-burst="10"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244778    5582 flags.go:59] FLAG: --kube-api-content-type="application/vnd.kubernetes.protobuf"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244784    5582 flags.go:59] FLAG: --kube-api-qps="5"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244790    5582 flags.go:59] FLAG: --kube-reserved=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244796    5582 flags.go:59] FLAG: --kube-reserved-cgroup=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244805    5582 flags.go:59] FLAG: --kubeconfig="/var/lib/kubelet/kubeconfig"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244811    5582 flags.go:59] FLAG: --kubelet-cgroups=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244817    5582 flags.go:59] FLAG: --lock-file=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244826    5582 flags.go:59] FLAG: --log-backtrace-at=":0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244833    5582 flags.go:59] FLAG: --log-cadvisor-usage="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244838    5582 flags.go:59] FLAG: --log-dir=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244843    5582 flags.go:59] FLAG: --log-file=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244848    5582 flags.go:59] FLAG: --log-file-max-size="1800"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244854    5582 flags.go:59] FLAG: --log-flush-frequency="5s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244859    5582 flags.go:59] FLAG: --logging-format="text"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244864    5582 flags.go:59] FLAG: --logtostderr="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244870    5582 flags.go:59] FLAG: --machine-id-file="/etc/machine-id,/var/lib/dbus/machine-id"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244877    5582 flags.go:59] FLAG: --make-iptables-util-chains="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244882    5582 flags.go:59] FLAG: --manifest-url=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244887    5582 flags.go:59] FLAG: --manifest-url-header=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244896    5582 flags.go:59] FLAG: --master-service-namespace="default"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244902    5582 flags.go:59] FLAG: --max-open-files="1000000"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244911    5582 flags.go:59] FLAG: --max-pods="110"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244916    5582 flags.go:59] FLAG: --maximum-dead-containers="-1"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244926    5582 flags.go:59] FLAG: --maximum-dead-containers-per-container="1"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244935    5582 flags.go:59] FLAG: --minimum-container-ttl-duration="0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244941    5582 flags.go:59] FLAG: --minimum-image-ttl-duration="2m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244947    5582 flags.go:59] FLAG: --network-plugin="cni"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244952    5582 flags.go:59] FLAG: --network-plugin-mtu="0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244957    5582 flags.go:59] FLAG: --node-ip="192.168.176.89"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244962    5582 flags.go:59] FLAG: --node-labels="larry=sounders,phil=swif,pikov=andropov"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244974    5582 flags.go:59] FLAG: --node-status-max-images="50"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244979    5582 flags.go:59] FLAG: --node-status-update-frequency="10s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244984    5582 flags.go:59] FLAG: --non-masquerade-cidr="10.0.0.0/8"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244990    5582 flags.go:59] FLAG: --one-output="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.244995    5582 flags.go:59] FLAG: --oom-score-adj="-999"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245001    5582 flags.go:59] FLAG: --pod-cidr=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245006    5582 flags.go:59] FLAG: --pod-infra-container-image="602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/pause:3.1-eksbuild.1"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245013    5582 flags.go:59] FLAG: --pod-manifest-path=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245019    5582 flags.go:59] FLAG: --pod-max-pids="-1"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245028    5582 flags.go:59] FLAG: --pods-per-core="0"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245033    5582 flags.go:59] FLAG: --port="10250"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245039    5582 flags.go:59] FLAG: --protect-kernel-defaults="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245044    5582 flags.go:59] FLAG: --provider-id=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245054    5582 flags.go:59] FLAG: --qos-reserved=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245061    5582 flags.go:59] FLAG: --read-only-port="10255"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245067    5582 flags.go:59] FLAG: --really-crash-for-testing="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245073    5582 flags.go:59] FLAG: --redirect-container-streaming="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245078    5582 flags.go:59] FLAG: --register-node="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245084    5582 flags.go:59] FLAG: --register-schedulable="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245089    5582 flags.go:59] FLAG: --register-with-taints=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245095    5582 flags.go:59] FLAG: --registry-burst="10"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245101    5582 flags.go:59] FLAG: --registry-qps="5"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245105    5582 flags.go:59] FLAG: --reserved-cpus=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245111    5582 flags.go:59] FLAG: --resolv-conf="/etc/resolv.conf"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245118    5582 flags.go:59] FLAG: --root-dir="/var/lib/kubelet"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245130    5582 flags.go:59] FLAG: --rotate-certificates="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245136    5582 flags.go:59] FLAG: --rotate-server-certificates="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245141    5582 flags.go:59] FLAG: --runonce="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245147    5582 flags.go:59] FLAG: --runtime-cgroups=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245152    5582 flags.go:59] FLAG: --runtime-request-timeout="2m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245158    5582 flags.go:59] FLAG: --seccomp-profile-root="/var/lib/kubelet/seccomp"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245164    5582 flags.go:59] FLAG: --serialize-image-pulls="true"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245170    5582 flags.go:59] FLAG: --skip-headers="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245179    5582 flags.go:59] FLAG: --skip-log-headers="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245185    5582 flags.go:59] FLAG: --stderrthreshold="2"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245191    5582 flags.go:59] FLAG: --storage-driver-buffer-duration="1m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245197    5582 flags.go:59] FLAG: --storage-driver-db="cadvisor"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245202    5582 flags.go:59] FLAG: --storage-driver-host="localhost:8086"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245207    5582 flags.go:59] FLAG: --storage-driver-password="root"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245212    5582 flags.go:59] FLAG: --storage-driver-secure="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245218    5582 flags.go:59] FLAG: --storage-driver-table="stats"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245225    5582 flags.go:59] FLAG: --storage-driver-user="root"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245230    5582 flags.go:59] FLAG: --streaming-connection-idle-timeout="4h0m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245236    5582 flags.go:59] FLAG: --sync-frequency="1m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245241    5582 flags.go:59] FLAG: --system-cgroups=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245247    5582 flags.go:59] FLAG: --system-reserved=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245253    5582 flags.go:59] FLAG: --system-reserved-cgroup=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245258    5582 flags.go:59] FLAG: --tls-cert-file=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245263    5582 flags.go:59] FLAG: --tls-cipher-suites="[]"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245275    5582 flags.go:59] FLAG: --tls-min-version=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245281    5582 flags.go:59] FLAG: --tls-private-key-file=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245285    5582 flags.go:59] FLAG: --topology-manager-policy="none"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245294    5582 flags.go:59] FLAG: --topology-manager-scope="container"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245301    5582 flags.go:59] FLAG: --v="2"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245307    5582 flags.go:59] FLAG: --version="false"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245316    5582 flags.go:59] FLAG: --vmodule=""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245321    5582 flags.go:59] FLAG: --volume-plugin-dir="/usr/libexec/kubernetes/kubelet-plugins/volume/exec/"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245331    5582 flags.go:59] FLAG: --volume-stats-agg-period="1m0s"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.245427    5582 feature_gate.go:243] feature gates: &{map[]}
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: W0921 16:44:53.245456    5582 server.go:191] Warning: For remote container runtime, --pod-infra-container-image is ignored in kubelet, which should be set in that remote runtime instead
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: Flag --cloud-provider has been deprecated, will be removed in 1.23, in favor of removing cloud provider code from Kubelet.
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.249902    5582 feature_gate.go:243] feature gates: &{map[CSIServiceAccountToken:true RotateKubeletServerCertificate:true]}
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.250093    5582 feature_gate.go:243] feature gates: &{map[CSIServiceAccountToken:true RotateKubeletServerCertificate:true]}
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.282231    5582 mount_linux.go:207] Detected OS with systemd
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.282734    5582 server.go:416] Version: v1.20.7-eks-135321
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.282823    5582 feature_gate.go:243] feature gates: &{map[CSIServiceAccountToken:true RotateKubeletServerCertificate:true]}
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.282922    5582 feature_gate.go:243] feature gates: &{map[CSIServiceAccountToken:true RotateKubeletServerCertificate:true]}
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: W0921 16:44:53.283078    5582 plugins.go:105] WARNING: aws built-in cloud provider is now deprecated. The AWS provider is deprecated and will be removed in a future release
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.284183    5582 aws.go:1281] Zone not specified in configuration file; querying AWS metadata service
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.287013    5582 aws.go:1321] Building AWS cloudprovider
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.710852    5582 tags.go:79] AWS cloud filtering on ClusterID: jacob-karpenter-demo
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.710888    5582 server.go:537] Successfully initialized cloud provider: "aws" from the config file: ""
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.710899    5582 server.go:975] cloud provider determined current node name to be ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.719000    5582 dynamic_cafile_content.go:129] Loaded a new CA Bundle and Verifier for "client-ca-bundle::/etc/kubernetes/pki/ca.crt"
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.719143    5582 dynamic_cafile_content.go:167] Starting client-ca-bundle::/etc/kubernetes/pki/ca.crt
+messages:Sep 21 16:44:53 ip-192-168-176-89 kubelet: I0921 16:44:53.719586    5582 manager.go:165] cAdvisor running in container: "/sys/fs/cgroup/cpu,cpuacct/system.slice/kubelet.service"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.721758    5582 fs.go:127] Filesystem UUIDs: map[489c1f20-6a5b-4ec8-b23a-0ab6dde1ce5a:/dev/nvme0n1p1]
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.721786    5582 fs.go:128] Filesystem partitions: map[/dev/nvme0n1p1:{mountpoint:/ major:259 minor:2 fsType:xfs blockSize:0} /dev/shm:{mountpoint:/dev/shm major:0 minor:21 fsType:tmpfs blockSize:0} /run:{mountpoint:/run major:0 minor:23 fsType:tmpfs blockSize:0} /sys/fs/cgroup:{mountpoint:/sys/fs/cgroup major:0 minor:24 fsType:tmpfs blockSize:0}]
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.724462    5582 nvidia.go:116] NVML initialized. Number of NVIDIA devices: 1
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.733914    5582 manager.go:213] Machine: {Timestamp:2021-09-21 16:44:58.733620289 +0000 UTC m=+13.400963565 NumCores:4 NumPhysicalCores:2 NumSockets:1 CpuFrequency:3100030 MemoryCapacity:16479948800 MemoryByType:map[] NVMInfo:{MemoryModeCapacity:0 AppDirectModeCapacity:0 AvgPowerBudget:0} HugePages:[{PageSize:1048576 NumPages:0} {PageSize:2048 NumPages:0}] MachineID:ec26311146388e1d4c70785fcb32d809 SystemUUID:ec263111-4638-8e1d-4c70-785fcb32d809 BootID:fcf68fa8-3013-4319-ba84-855cac39aba7 Filesystems:[{Device:/dev/shm DeviceMajor:0 DeviceMinor:21 Capacity:8239972352 Type:vfs Inodes:2011712 HasInodes:true} {Device:/run DeviceMajor:0 DeviceMinor:23 Capacity:8239972352 Type:vfs Inodes:2011712 HasInodes:true} {Device:/sys/fs/cgroup DeviceMajor:0 DeviceMinor:24 Capacity:8239972352 Type:vfs Inodes:2011712 HasInodes:true} {Device:/dev/nvme0n1p1 DeviceMajor:259 DeviceMinor:2 Capacity:21462233088 Type:vfs Inodes:10484672 HasInodes:true}] DiskMap:map[259:0:{Name:nvme1n1 Major:259 Minor:0 Size:125000000000 Scheduler:none} 259:1:{Name:nvme0n1 Major:259 Minor:1 Size:21474836480 Scheduler:none}] NetworkDevices:[{Name:eth0 MacAddress:06:f0:72:29:e8:69 Speed:0 Mtu:9001}] Topology:[{Id:0 Memory:16479948800 HugePages:[{PageSize:1048576 NumPages:0} {PageSize:2048 NumPages:0}] Cores:[{Id:0 Threads:[0 2] Caches:[{Size:32768 Type:Data Level:1} {Size:32768 Type:Instruction Level:1} {Size:1048576 Type:Unified Level:2}] SocketID:0} {Id:1 Threads:[1 3] Caches:[{Size:32768 Type:Data Level:1} {Size:32768 Type:Instruction Level:1} {Size:1048576 Type:Unified Level:2}] SocketID:0}] Caches:[{Size:37486592 Type:Unified Level:3}]}] CloudProvider:AWS InstanceType:g4dn.xlarge InstanceID:i-0d6197819ab0cb61f}
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.734461    5582 manager_no_libpfm.go:28] cAdvisor is build without cgo and/or libpfm support. Perf event counters are not available.
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.734646    5582 manager.go:229] Version: {KernelVersion:5.4.141-67.229.amzn2.x86_64 ContainerOsVersion:Amazon Linux 2 DockerVersion:Unknown DockerAPIVersion:Unknown CadvisorVersion: CadvisorRevision:}
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735816    5582 container_manager_linux.go:274] container manager verified user specified cgroup-root exists: []
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735841    5582 container_manager_linux.go:279] Creating Container Manager object based on Node Config: {RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:remote CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/kubelet ProtectKernelDefaults:true NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: ReservedSystemCPUs: EnforceNodeAllocatable:map[pods:{}] KubeReserved:map[cpu:{i:{value:80 scale:-3} d:{Dec:<nil>} s:80m Format:DecimalSI} ephemeral-storage:{i:{value:1073741824 scale:0} d:{Dec:<nil>} s:1Gi Format:BinarySI} memory:{i:{value:601882624 scale:0} d:{Dec:<nil>} s:574Mi Format:BinarySI}] SystemReserved:map[] HardEvictionThresholds:[{Signal:memory.available Operator:LessThan Value:{Quantity:100Mi Percentage:0} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.1} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.inodesFree Operator:LessThan Value:{Quantity:<nil> Percentage:0.05} GracePeriod:0s MinReclaim:<nil>}]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalTopologyManagerScope:container ExperimentalCPUManagerReconcilePeriod:10s ExperimentalPodPidsLimit:-1 EnforceCPULimits:true CPUCFSQuotaPeriod:100ms ExperimentalTopologyManagerPolicy:none}
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735940    5582 topology_manager.go:120] [topologymanager] Creating topology manager with none policy per container scope
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735959    5582 container_manager_linux.go:310] [topologymanager] Initializing Topology Manager with none policy and container-level scope
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735967    5582 container_manager_linux.go:315] Creating device plugin manager: true
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.735986    5582 manager.go:133] Creating Device Plugin manager at /var/lib/kubelet/device-plugins/kubelet.sock
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.736222    5582 server.go:975] cloud provider determined current node name to be ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.736245    5582 server.go:1117] Using root directory: /var/lib/kubelet
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.738104    5582 kubelet.go:394] Attempting to sync node with API server
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.738177    5582 reflector.go:219] Starting reflector *v1.Node (0s) from k8s.io/client-go/informers/factory.go:134
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.738422    5582 kubelet.go:273] Adding apiserver pod source
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.738808    5582 apiserver.go:43] Waiting for node sync before watching apiserver pods
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.739083    5582 reflector.go:219] Starting reflector *v1.Service (0s) from k8s.io/client-go/informers/factory.go:134
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.742404    5582 kuberuntime_manager.go:216] Container runtime containerd initialized, version: 1.4.6, apiVersion: v1alpha2
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: W0921 16:44:58.813106    5582 probe.go:268] Flexvolume plugin directory at /usr/libexec/kubernetes/kubelet-plugins/volume/exec/ does not exist. Recreating.
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813320    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/gce-pd"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813343    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/cinder"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813365    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/azure-disk"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813374    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/azure-file"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813383    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/vsphere-volume"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813392    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/aws-ebs"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813820    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/empty-dir"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813838    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/git-repo"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813856    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/host-path"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813867    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/nfs"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813891    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/secret"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813903    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/iscsi"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813917    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/glusterfs"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813930    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/rbd"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813942    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/quobyte"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813952    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/cephfs"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813969    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/downward-api"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813985    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/fc"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.813995    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/flocker"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814006    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/configmap"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814024    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/projected"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814056    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/portworx-volume"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814071    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/scaleio"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814083    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/local-volume"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814093    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/storageos"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.814833    5582 plugins.go:638] Loaded volume plugin "kubernetes.io/csi"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.815271    5582 server.go:1176] Started kubelet
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.815808    5582 server.go:149] Starting to listen on 0.0.0.0:10250
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.816699    5582 server.go:415] Adding debug handlers to kubelet server.
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: E0921 16:44:58.816933    5582 cri_stats_provider.go:376] Failed to get the info of the filesystem with mountpoint "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs": unable to find data in memory cache.
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: E0921 16:44:58.817118    5582 kubelet.go:1294] Image garbage collection failed once. Stats initialization may not have completed yet: invalid capacity 0 on image filesystem
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.817454    5582 certificate_manager.go:282] Certificate rotation is enabled.
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.817483    5582 fs_resource_analyzer.go:64] Starting FS ResourceAnalyzer
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.819079    5582 volume_manager.go:269] The desired_state_of_world populator starts
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.819095    5582 volume_manager.go:271] Starting Kubelet Volume Manager
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.819233    5582 desired_state_of_world_populator.go:142] Desired state populator starts to run
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.819530    5582 reflector.go:219] Starting reflector *v1.CSIDriver (0s) from k8s.io/client-go/informers/factory.go:134
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: E0921 16:44:58.819845    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.820005    5582 factory.go:55] Registering systemd factory
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.820334    5582 factory.go:101] Registering Raw factory
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.820642    5582 manager.go:1203] Started watching for new ooms in manager
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.821229    5582 manager.go:301] Starting recovery of all containers
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.827243    5582 manager.go:306] Recovery completed
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: E0921 16:44:58.920960    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921030    5582 kubelet_node_status.go:362] Setting node annotation to enable volume controller attach/detach
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921051    5582 kubelet_node_status.go:410] Adding node label from cloud provider: beta.kubernetes.io/instance-type=g4dn.xlarge
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921064    5582 kubelet_node_status.go:412] Adding node label from cloud provider: node.kubernetes.io/instance-type=g4dn.xlarge
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921077    5582 kubelet_node_status.go:423] Adding node label from cloud provider: failure-domain.beta.kubernetes.io/zone=us-west-2a
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921085    5582 kubelet_node_status.go:425] Adding node label from cloud provider: topology.kubernetes.io/zone=us-west-2a
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921091    5582 kubelet_node_status.go:429] Adding node label from cloud provider: failure-domain.beta.kubernetes.io/region=us-west-2
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921100    5582 kubelet_node_status.go:431] Adding node label from cloud provider: topology.kubernetes.io/region=us-west-2
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.921255    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931704    5582 kubelet_node_status.go:362] Setting node annotation to enable volume controller attach/detach
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931724    5582 kubelet_node_status.go:410] Adding node label from cloud provider: beta.kubernetes.io/instance-type=g4dn.xlarge
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931733    5582 kubelet_node_status.go:412] Adding node label from cloud provider: node.kubernetes.io/instance-type=g4dn.xlarge
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931740    5582 kubelet_node_status.go:423] Adding node label from cloud provider: failure-domain.beta.kubernetes.io/zone=us-west-2a
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931746    5582 kubelet_node_status.go:425] Adding node label from cloud provider: topology.kubernetes.io/zone=us-west-2a
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931752    5582 kubelet_node_status.go:429] Adding node label from cloud provider: failure-domain.beta.kubernetes.io/region=us-west-2
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931759    5582 kubelet_node_status.go:431] Adding node label from cloud provider: topology.kubernetes.io/region=us-west-2
+messages:Sep 21 16:44:58 ip-192-168-176-89 kubelet: I0921 16:44:58.931877    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.021083    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.093344    5582 kubelet_network_linux.go:56] Initialized IPv4 iptables rules.
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.093370    5582 status_manager.go:158] Starting to sync pod status with apiserver
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.093398    5582 kubelet.go:1831] Starting kubelet main sync loop.
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.093434    5582 kubelet.go:1855] skipping pod synchronization - [container runtime status check may not have completed yet, PLEG is not healthy: pleg has yet to be successful]
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.093640    5582 reflector.go:219] Starting reflector *v1.RuntimeClass (0s) from k8s.io/client-go/informers/factory.go:134
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.121143    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.183735    5582 kubelet_node_status.go:554] Recording NodeHasSufficientMemory event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.183763    5582 kubelet_node_status.go:554] Recording NodeHasNoDiskPressure event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.183773    5582 kubelet_node_status.go:554] Recording NodeHasSufficientPID event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184034    5582 kubelet_node_status.go:554] Recording NodeHasSufficientMemory event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184050    5582 kubelet_node_status.go:554] Recording NodeHasNoDiskPressure event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184060    5582 kubelet_node_status.go:554] Recording NodeHasSufficientPID event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184090    5582 kubelet_node_status.go:71] Attempting to register node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184407    5582 cpu_manager.go:193] [cpumanager] starting with none policy
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184428    5582 cpu_manager.go:194] [cpumanager] reconciling every 10s
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.184454    5582 state_mem.go:36] [cpumanager] initializing new in-memory state store
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.193618    5582 kubelet.go:1855] skipping pod synchronization - container runtime status check may not have completed yet
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.194028    5582 policy_none.go:43] [cpumanager] none policy: Start
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.221246    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.230804    5582 manager.go:236] Starting Device Plugin manager
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: W0921 16:44:59.230850    5582 manager.go:594] Failed to retrieve checkpoint for "kubelet_internal_checkpoint": checkpoint is not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.230974    5582 manager.go:278] Serving device plugin registration server on "/var/lib/kubelet/device-plugins/kubelet.sock"
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.231038    5582 plugin_watcher.go:52] Plugin Watcher Start at /var/lib/kubelet/plugins_registry
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.231105    5582 plugin_manager.go:112] The desired_state_of_world populator (plugin watcher) starts
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: I0921 16:44:59.231113    5582 plugin_manager.go:114] Starting Kubelet Plugin Manager
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.231862    5582 eviction_manager.go:260] eviction manager: failed to get summary stats: failed to get node info: node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.321325    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.421422    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.521526    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.621594    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.721695    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.821798    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:44:59 ip-192-168-176-89 kubelet: E0921 16:44:59.921882    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.021988    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.122056    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.222133    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.322235    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.422323    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.522388    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.622495    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.722586    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.822683    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:00 ip-192-168-176-89 kubelet: E0921 16:45:00.922749    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.022852    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.122925    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.222960    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.323035    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.423138    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.523228    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.623302    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.723396    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.823495    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:01 ip-192-168-176-89 kubelet: E0921 16:45:01.923591    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: E0921 16:45:02.023694    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: E0921 16:45:02.123771    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: E0921 16:45:02.223864    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: E0921 16:45:02.378177    5582 kubelet.go:2266] node "ip-192-168-176-89.us-west-2.compute.internal" not found
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.378644    5582 kubelet_node_status.go:109] Node ip-192-168-176-89.us-west-2.compute.internal was previously registered
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.378897    5582 kubelet_node_status.go:275] Controller attach-detach setting changed to true; updating existing Node
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.389849    5582 kubelet_node_status.go:74] Successfully registered node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440172    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440802    5582 kubelet_node_status.go:554] Recording NodeHasSufficientMemory event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440835    5582 kubelet_node_status.go:554] Recording NodeHasNoDiskPressure event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440844    5582 kubelet_node_status.go:554] Recording NodeHasSufficientPID event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440860    5582 kubelet_node_status.go:554] Recording NodeNotReady event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.440869    5582 setters.go:577] Node became not ready: {Type:Ready Status:False LastHeartbeatTime:2021-09-21 16:45:02.440850256 +0000 UTC m=+17.108193477 LastTransitionTime:2021-09-21 16:45:02.440850256 +0000 UTC m=+17.108193477 Reason:KubeletNotReady Message:runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized}
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.739316    5582 apiserver.go:53] Watching apiserver
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.739393    5582 reflector.go:219] Starting reflector *v1.Pod (0s) from k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:67
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745039    5582 kubelet.go:1917] SyncLoop (ADD, "api"): "fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931), kube-proxy-xfdzg_kube-system(25a529d8-4c81-4e00-be29-493832b75f45), aws-node-4ccvw_kube-system(d0c4c02e-7984-420c-b2a6-fed28b7ad529)"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745093    5582 topology_manager.go:187] [topologymanager] Topology Admit Handler
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745166    5582 topology_manager.go:187] [topologymanager] Topology Admit Handler
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745175    5582 reflector.go:219] Starting reflector *v1.Secret (0s) from object-"default"/"default-token-ks4vm"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745195    5582 reflector.go:219] Starting reflector *v1.Secret (0s) from object-"kube-system"/"kube-proxy-token-zp9bn"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745226    5582 topology_manager.go:187] [topologymanager] Topology Admit Handler
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745300    5582 reflector.go:219] Starting reflector *v1.ConfigMap (0s) from object-"kube-system"/"kube-proxy"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745387    5582 reflector.go:219] Starting reflector *v1.ConfigMap (0s) from object-"kube-system"/"kube-proxy-config"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.745392    5582 reflector.go:219] Starting reflector *v1.Secret (0s) from object-"kube-system"/"aws-node-token-fbqlw"
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: E0921 16:45:02.746102    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.819366    5582 certificate_manager.go:412] Rotating certificates
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879119    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "lib-modules" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-lib-modules") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879157    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "cni-bin-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-bin-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879178    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "log-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-log-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879197    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "run-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-run-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879219    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-xtables-lock") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879242    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "config" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-config") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879263    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "cni-net-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-net-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879283    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "dockershim" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-dockershim") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879305    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "aws-node-token-fbqlw" (UniqueName: "kubernetes.io/secret/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-node-token-fbqlw") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879326    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-kubeconfig") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879351    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "varlog" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-varlog") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879371    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "kube-proxy-token-zp9bn" (UniqueName: "kubernetes.io/secret/25a529d8-4c81-4e00-be29-493832b75f45-kube-proxy-token-zp9bn") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879400    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "aws-iam-token" (UniqueName: "kubernetes.io/projected/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-iam-token") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879421    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-xtables-lock") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879442    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "default-token-ks4vm" (UniqueName: "kubernetes.io/secret/ae909840-9bef-4944-b0bc-54d72289d931-default-token-ks4vm") pod "fake-gpu-user" (UID: "ae909840-9bef-4944-b0bc-54d72289d931")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.879450    5582 reconciler.go:157] Reconciler: start to sync state
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979735    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-kubeconfig") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979785    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "config" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-config") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979831    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "cni-net-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-net-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979853    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "dockershim" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-dockershim") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979878    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "aws-node-token-fbqlw" (UniqueName: "kubernetes.io/secret/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-node-token-fbqlw") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979902    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "default-token-ks4vm" (UniqueName: "kubernetes.io/secret/ae909840-9bef-4944-b0bc-54d72289d931-default-token-ks4vm") pod "fake-gpu-user" (UID: "ae909840-9bef-4944-b0bc-54d72289d931")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.979971    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "dockershim" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-dockershim") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980190    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "kubeconfig" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-kubeconfig") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980272    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "varlog" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-varlog") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980300    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "kube-proxy-token-zp9bn" (UniqueName: "kubernetes.io/secret/25a529d8-4c81-4e00-be29-493832b75f45-kube-proxy-token-zp9bn") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980324    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "aws-iam-token" (UniqueName: "kubernetes.io/projected/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-iam-token") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980348    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-xtables-lock") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980373    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-xtables-lock") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980397    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "lib-modules" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-lib-modules") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980405    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "config" (UniqueName: "kubernetes.io/configmap/25a529d8-4c81-4e00-be29-493832b75f45-config") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980420    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "cni-bin-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-bin-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980484    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "log-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-log-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980531    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "cni-net-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-net-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980535    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "run-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-run-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980566    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "varlog" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-varlog") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980599    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "cni-bin-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-cni-bin-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980630    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "run-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-run-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980641    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-xtables-lock") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980665    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "log-dir" (UniqueName: "kubernetes.io/host-path/d0c4c02e-7984-420c-b2a6-fed28b7ad529-log-dir") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980682    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "lib-modules" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-lib-modules") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.980701    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/25a529d8-4c81-4e00-be29-493832b75f45-xtables-lock") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.982672    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "default-token-ks4vm" (UniqueName: "kubernetes.io/secret/ae909840-9bef-4944-b0bc-54d72289d931-default-token-ks4vm") pod "fake-gpu-user" (UID: "ae909840-9bef-4944-b0bc-54d72289d931")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.983190    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "aws-node-token-fbqlw" (UniqueName: "kubernetes.io/secret/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-node-token-fbqlw") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:02 ip-192-168-176-89 kubelet: I0921 16:45:02.983779    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "kube-proxy-token-zp9bn" (UniqueName: "kubernetes.io/secret/25a529d8-4c81-4e00-be29-493832b75f45-kube-proxy-token-zp9bn") pod "kube-proxy-xfdzg" (UID: "25a529d8-4c81-4e00-be29-493832b75f45")
+messages:Sep 21 16:45:03 ip-192-168-176-89 kubelet: I0921 16:45:03.064229    5582 kuberuntime_manager.go:439] No sandbox for pod "kube-proxy-xfdzg_kube-system(25a529d8-4c81-4e00-be29-493832b75f45)" can be found. Need to start a new one
+messages:Sep 21 16:45:03 ip-192-168-176-89 kubelet: I0921 16:45:03.531523    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "aws-iam-token" (UniqueName: "kubernetes.io/projected/d0c4c02e-7984-420c-b2a6-fed28b7ad529-aws-iam-token") pod "aws-node-4ccvw" (UID: "d0c4c02e-7984-420c-b2a6-fed28b7ad529")
+messages:Sep 21 16:45:03 ip-192-168-176-89 kubelet: I0921 16:45:03.663240    5582 kuberuntime_manager.go:439] No sandbox for pod "aws-node-4ccvw_kube-system(d0c4c02e-7984-420c-b2a6-fed28b7ad529)" can be found. Need to start a new one
+messages:Sep 21 16:45:03 ip-192-168-176-89 kubelet: I0921 16:45:03.718323    5582 reflector.go:219] Starting reflector *v1.CertificateSigningRequest (0s) from k8s.io/client-go/tools/watch/informerwatcher.go:146
+messages:Sep 21 16:45:04 ip-192-168-176-89 kubelet: E0921 16:45:04.093666    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:04 ip-192-168-176-89 kubelet: I0921 16:45:04.124953    5582 csr.go:245] certificate signing request csr-dszn8 is issued
+messages:Sep 21 16:45:04 ip-192-168-176-89 kubelet: I0921 16:45:04.127837    5582 reflector.go:225] Stopping reflector *v1.CertificateSigningRequest (0s) from k8s.io/client-go/tools/watch/informerwatcher.go:146
+messages:Sep 21 16:45:04 ip-192-168-176-89 kubelet: E0921 16:45:04.231467    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:05 ip-192-168-176-89 kubelet: I0921 16:45:05.128523    5582 certificate_manager.go:556] Certificate expiration is 2022-09-21 16:40:00 +0000 UTC, rotation deadline is 2022-06-09 23:39:17.236482967 +0000 UTC
+messages:Sep 21 16:45:05 ip-192-168-176-89 kubelet: I0921 16:45:05.128549    5582 certificate_manager.go:288] Waiting 6270h54m12.107936162s for next certificate rotation
+messages:Sep 21 16:45:06 ip-192-168-176-89 kubelet: E0921 16:45:06.093661    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:06 ip-192-168-176-89 kubelet: I0921 16:45:06.128689    5582 certificate_manager.go:556] Certificate expiration is 2022-09-21 16:40:00 +0000 UTC, rotation deadline is 2022-06-17 20:16:24.151458234 +0000 UTC
+messages:Sep 21 16:45:06 ip-192-168-176-89 kubelet: I0921 16:45:06.128722    5582 certificate_manager.go:288] Waiting 6459h31m18.022739501s for next certificate rotation
+messages:Sep 21 16:45:07 ip-192-168-176-89 kubelet: I0921 16:45:07.254503    5582 provider.go:102] Refreshing cache for provider: *credentialprovider.defaultDockerConfigProvider
+messages:Sep 21 16:45:08 ip-192-168-176-89 kubelet: E0921 16:45:08.093743    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:08 ip-192-168-176-89 kubelet: I0921 16:45:08.103979    5582 kubelet.go:1955] SyncLoop (PLEG): "kube-proxy-xfdzg_kube-system(25a529d8-4c81-4e00-be29-493832b75f45)", event: &pleg.PodLifecycleEvent{ID:"25a529d8-4c81-4e00-be29-493832b75f45", Type:"ContainerStarted", Data:"aafd758baf4e3feefe77b48986003c30743eade0ae3a7561a6bd71778d58b932"}
+messages:Sep 21 16:45:08 ip-192-168-176-89 kubelet: I0921 16:45:08.104667    5582 kubelet.go:1955] SyncLoop (PLEG): "aws-node-4ccvw_kube-system(d0c4c02e-7984-420c-b2a6-fed28b7ad529)", event: &pleg.PodLifecycleEvent{ID:"d0c4c02e-7984-420c-b2a6-fed28b7ad529", Type:"ContainerStarted", Data:"10684a390803321116432381cd4f086cf88a4ba0589713da846ceed65ca59d4d"}
+messages:Sep 21 16:45:09 ip-192-168-176-89 kubelet: E0921 16:45:09.234565    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:10 ip-192-168-176-89 kubelet: E0921 16:45:10.093765    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:12 ip-192-168-176-89 kubelet: E0921 16:45:12.093648    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:12 ip-192-168-176-89 kubelet: I0921 16:45:12.466419    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:14 ip-192-168-176-89 kubelet: E0921 16:45:14.093651    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:14 ip-192-168-176-89 kubelet: E0921 16:45:14.235109    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:16 ip-192-168-176-89 kubelet: E0921 16:45:16.093663    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:18 ip-192-168-176-89 kubelet: E0921 16:45:18.093642    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:19 ip-192-168-176-89 kubelet: E0921 16:45:19.235643    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:20 ip-192-168-176-89 kubelet: E0921 16:45:20.093612    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:22 ip-192-168-176-89 kubelet: E0921 16:45:22.093654    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:22 ip-192-168-176-89 kubelet: I0921 16:45:22.477260    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:23 ip-192-168-176-89 kubelet: I0921 16:45:23.115563    5582 kubelet.go:1955] SyncLoop (PLEG): "aws-node-4ccvw_kube-system(d0c4c02e-7984-420c-b2a6-fed28b7ad529)", event: &pleg.PodLifecycleEvent{ID:"d0c4c02e-7984-420c-b2a6-fed28b7ad529", Type:"ContainerDied", Data:"fdbea492304134bf3713434180a77668aa78830814efe5ea8d612a7ddbefa703"}
+messages:Sep 21 16:45:23 ip-192-168-176-89 kubelet: I0921 16:45:23.117091    5582 kubelet.go:1955] SyncLoop (PLEG): "kube-proxy-xfdzg_kube-system(25a529d8-4c81-4e00-be29-493832b75f45)", event: &pleg.PodLifecycleEvent{ID:"25a529d8-4c81-4e00-be29-493832b75f45", Type:"ContainerStarted", Data:"ee057914432492ff984c0d1bc4dfafe426f9d66c8ca07cb9acb06cd4e9c5a65e"}
+messages:Sep 21 16:45:24 ip-192-168-176-89 kubelet: E0921 16:45:24.093662    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:24 ip-192-168-176-89 kubelet: E0921 16:45:24.236120    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:26 ip-192-168-176-89 kubelet: E0921 16:45:26.093658    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:28 ip-192-168-176-89 kubelet: E0921 16:45:28.093665    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:28 ip-192-168-176-89 kubelet: I0921 16:45:28.122176    5582 kubelet.go:1955] SyncLoop (PLEG): "aws-node-4ccvw_kube-system(d0c4c02e-7984-420c-b2a6-fed28b7ad529)", event: &pleg.PodLifecycleEvent{ID:"d0c4c02e-7984-420c-b2a6-fed28b7ad529", Type:"ContainerStarted", Data:"7c1412e2486b1b54889a1b1b2ce98b80677b55c0df1bcdebd2b8ada244ca48ad"}
+messages:Sep 21 16:45:29 ip-192-168-176-89 kubelet: E0921 16:45:29.236600    5582 kubelet.go:2186] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:30 ip-192-168-176-89 kubelet: E0921 16:45:30.093682    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:32 ip-192-168-176-89 kubelet: E0921 16:45:32.093653    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:32 ip-192-168-176-89 kubelet: I0921 16:45:32.487451    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:34 ip-192-168-176-89 kubelet: E0921 16:45:34.093673    5582 pod_workers.go:191] Error syncing pod ae909840-9bef-4944-b0bc-54d72289d931 ("fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)"), skipping: network is not ready: runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:Network plugin returns error: cni plugin not initialized
+messages:Sep 21 16:45:36 ip-192-168-176-89 kubelet: I0921 16:45:36.114788    5582 kuberuntime_manager.go:439] No sandbox for pod "fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)" can be found. Need to start a new one
+messages:Sep 21 16:45:37 ip-192-168-176-89 kubelet: I0921 16:45:37.129655    5582 kubelet.go:1955] SyncLoop (PLEG): "fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)", event: &pleg.PodLifecycleEvent{ID:"ae909840-9bef-4944-b0bc-54d72289d931", Type:"ContainerStarted", Data:"b02cf08a1050f1a0c4ab0d77f3261beeb3636ebdbcdb0b8e7dc4c73eaeffa15e"}
+messages:Sep 21 16:45:40 ip-192-168-176-89 kubelet: I0921 16:45:40.133115    5582 kubelet.go:1955] SyncLoop (PLEG): "fake-gpu-user_default(ae909840-9bef-4944-b0bc-54d72289d931)", event: &pleg.PodLifecycleEvent{ID:"ae909840-9bef-4944-b0bc-54d72289d931", Type:"ContainerStarted", Data:"8d5abe124d8d477c525d5b62719f64523f35e2ee115e1eea15f23a24076d177d"}
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.508954    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.509678    5582 kubelet_node_status.go:554] Recording NodeReady event message for node ip-192-168-176-89.us-west-2.compute.internal
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.602140    5582 kubelet.go:1917] SyncLoop (ADD, "api"): "prometheus-node-exporter-kkg8d_monitoring(997a297c-6483-412c-84dd-4d3b9a5a74c0)"
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.602197    5582 topology_manager.go:187] [topologymanager] Topology Admit Handler
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.602286    5582 reflector.go:219] Starting reflector *v1.Secret (0s) from object-"monitoring"/"prometheus-node-exporter-token-879vl"
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.608430    5582 kubelet.go:1917] SyncLoop (ADD, "api"): "nvidia-device-plugin-daemonset-tl9sb_kube-system(42248991-d62a-4c35-a132-176ce6384c5c)"
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.608477    5582 topology_manager.go:187] [topologymanager] Topology Admit Handler
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.608548    5582 reflector.go:219] Starting reflector *v1.Secret (0s) from object-"kube-system"/"default-token-6nfp5"
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: E0921 16:45:42.616047    5582 reflector.go:138] object-"kube-system"/"default-token-6nfp5": Failed to watch *v1.Secret: failed to list *v1.Secret: secrets "default-token-6nfp5" is forbidden: User "system:node:ip-192-168-176-89.us-west-2.compute.internal" cannot list resource "secrets" in API group "" in the namespace "kube-system": no relationship found between node 'ip-192-168-176-89.us-west-2.compute.internal' and this object
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727341    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "device-plugin" (UniqueName: "kubernetes.io/host-path/42248991-d62a-4c35-a132-176ce6384c5c-device-plugin") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727430    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "prometheus-node-exporter-token-879vl" (UniqueName: "kubernetes.io/secret/997a297c-6483-412c-84dd-4d3b9a5a74c0-prometheus-node-exporter-token-879vl") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727450    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "sys" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-sys") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727467    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "root" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-root") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727518    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "default-token-6nfp5" (UniqueName: "kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.727542    5582 reconciler.go:224] operationExecutor.VerifyControllerAttachedVolume started for volume "proc" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-proc") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827744    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "default-token-6nfp5" (UniqueName: "kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827793    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "proc" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-proc") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827817    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "device-plugin" (UniqueName: "kubernetes.io/host-path/42248991-d62a-4c35-a132-176ce6384c5c-device-plugin") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827845    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "prometheus-node-exporter-token-879vl" (UniqueName: "kubernetes.io/secret/997a297c-6483-412c-84dd-4d3b9a5a74c0-prometheus-node-exporter-token-879vl") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827868    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "sys" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-sys") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827888    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "root" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-root") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827927    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "root" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-root") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827932    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "device-plugin" (UniqueName: "kubernetes.io/host-path/42248991-d62a-4c35-a132-176ce6384c5c-device-plugin") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.827985    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "proc" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-proc") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.828018    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "sys" (UniqueName: "kubernetes.io/host-path/997a297c-6483-412c-84dd-4d3b9a5a74c0-sys") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.829824    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "prometheus-node-exporter-token-879vl" (UniqueName: "kubernetes.io/secret/997a297c-6483-412c-84dd-4d3b9a5a74c0-prometheus-node-exporter-token-879vl") pod "prometheus-node-exporter-kkg8d" (UID: "997a297c-6483-412c-84dd-4d3b9a5a74c0")
+messages:Sep 21 16:45:42 ip-192-168-176-89 kubelet: I0921 16:45:42.919176    5582 kuberuntime_manager.go:439] No sandbox for pod "prometheus-node-exporter-kkg8d_monitoring(997a297c-6483-412c-84dd-4d3b9a5a74c0)" can be found. Need to start a new one
+messages:Sep 21 16:45:43 ip-192-168-176-89 kubelet: E0921 16:45:43.828017    5582 secret.go:195] Couldn't get secret kube-system/default-token-6nfp5: failed to sync secret cache: timed out waiting for the condition
+messages:Sep 21 16:45:43 ip-192-168-176-89 kubelet: E0921 16:45:43.828121    5582 nestedpendingoperations.go:301] Operation for "{volumeName:kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5 podName:42248991-d62a-4c35-a132-176ce6384c5c nodeName:}" failed. No retries permitted until 2021-09-21 16:45:44.32809565 +0000 UTC m=+58.995438877 (durationBeforeRetry 500ms). Error: "MountVolume.SetUp failed for volume \"default-token-6nfp5\" (UniqueName: \"kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5\") pod \"nvidia-device-plugin-daemonset-tl9sb\" (UID: \"42248991-d62a-4c35-a132-176ce6384c5c\") : failed to sync secret cache: timed out waiting for the condition"
+messages:Sep 21 16:45:44 ip-192-168-176-89 kubelet: I0921 16:45:44.137054    5582 kubelet.go:1955] SyncLoop (PLEG): "prometheus-node-exporter-kkg8d_monitoring(997a297c-6483-412c-84dd-4d3b9a5a74c0)", event: &pleg.PodLifecycleEvent{ID:"997a297c-6483-412c-84dd-4d3b9a5a74c0", Type:"ContainerStarted", Data:"b52b4b9a0889241f32f7f0db64bc6ed93608c0b16a2a4d1b5ced13a00187551d"}
+messages:Sep 21 16:45:44 ip-192-168-176-89 kubelet: I0921 16:45:44.330210    5582 reconciler.go:269] operationExecutor.MountVolume started for volume "default-token-6nfp5" (UniqueName: "kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:44 ip-192-168-176-89 kubelet: I0921 16:45:44.332017    5582 operation_generator.go:672] MountVolume.SetUp succeeded for volume "default-token-6nfp5" (UniqueName: "kubernetes.io/secret/42248991-d62a-4c35-a132-176ce6384c5c-default-token-6nfp5") pod "nvidia-device-plugin-daemonset-tl9sb" (UID: "42248991-d62a-4c35-a132-176ce6384c5c")
+messages:Sep 21 16:45:44 ip-192-168-176-89 kubelet: I0921 16:45:44.420129    5582 kuberuntime_manager.go:439] No sandbox for pod "nvidia-device-plugin-daemonset-tl9sb_kube-system(42248991-d62a-4c35-a132-176ce6384c5c)" can be found. Need to start a new one
+messages:Sep 21 16:45:45 ip-192-168-176-89 kubelet: I0921 16:45:45.138484    5582 kubelet.go:1955] SyncLoop (PLEG): "nvidia-device-plugin-daemonset-tl9sb_kube-system(42248991-d62a-4c35-a132-176ce6384c5c)", event: &pleg.PodLifecycleEvent{ID:"42248991-d62a-4c35-a132-176ce6384c5c", Type:"ContainerStarted", Data:"adebb26e48dfddd88756a603fa8466e6ef846dda3c8c7c7c4469a42b7615e1e6"}
+messages:Sep 21 16:45:49 ip-192-168-176-89 kubelet: I0921 16:45:49.144999    5582 kubelet.go:1955] SyncLoop (PLEG): "prometheus-node-exporter-kkg8d_monitoring(997a297c-6483-412c-84dd-4d3b9a5a74c0)", event: &pleg.PodLifecycleEvent{ID:"997a297c-6483-412c-84dd-4d3b9a5a74c0", Type:"ContainerStarted", Data:"26a40f1894d4d1bc1b6bc9ae94c14539b39c1a5562edf2c28e6766dfb790bf1e"}
+messages:Sep 21 16:45:52 ip-192-168-176-89 kubelet: I0921 16:45:52.532853    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:45:55 ip-192-168-176-89 kubelet: I0921 16:45:55.301276    5582 manager.go:408] Got registration request from device plugin with resource name "nvidia.com/gpu"
+messages:Sep 21 16:45:55 ip-192-168-176-89 kubelet: I0921 16:45:55.301940    5582 manager.go:462] Registered endpoint &{0xc00028fe70 0xc00166e000 /var/lib/kubelet/device-plugins/nvidia-gpu.sock nvidia.com/gpu {0 0 <nil>} {0 0} 0x1e64660}
+messages:Sep 21 16:45:55 ip-192-168-176-89 kubelet: I0921 16:45:55.302458    5582 endpoint.go:112] State pushed for device plugin nvidia.com/gpu
+messages:Sep 21 16:45:56 ip-192-168-176-89 kubelet: I0921 16:45:56.153052    5582 kubelet.go:1955] SyncLoop (PLEG): "nvidia-device-plugin-daemonset-tl9sb_kube-system(42248991-d62a-4c35-a132-176ce6384c5c)", event: &pleg.PodLifecycleEvent{ID:"42248991-d62a-4c35-a132-176ce6384c5c", Type:"ContainerStarted", Data:"76f5839f4adcac11d6f9484cace7f9d1ba7a4531d35d5e59198b7fe12ad51d9d"}
+messages:Sep 21 16:46:02 ip-192-168-176-89 kubelet: I0921 16:46:02.543552    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:46:02 ip-192-168-176-89 kubelet: I0921 16:46:02.543601    5582 setters.go:343] Update capacity for nvidia.com/gpu to 1
+messages:Sep 21 16:46:12 ip-192-168-176-89 kubelet: I0921 16:46:12.567430    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:46:22 ip-192-168-176-89 kubelet: I0921 16:46:22.577443    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:46:32 ip-192-168-176-89 kubelet: I0921 16:46:32.585105    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:46:42 ip-192-168-176-89 kubelet: I0921 16:46:42.596232    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:46:52 ip-192-168-176-89 kubelet: I0921 16:46:52.603633    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:02 ip-192-168-176-89 kubelet: I0921 16:47:02.614408    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:12 ip-192-168-176-89 kubelet: I0921 16:47:12.623127    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:22 ip-192-168-176-89 kubelet: I0921 16:47:22.633884    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:32 ip-192-168-176-89 kubelet: I0921 16:47:32.639645    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:42 ip-192-168-176-89 kubelet: I0921 16:47:42.649567    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:47:52 ip-192-168-176-89 kubelet: I0921 16:47:52.659395    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:02 ip-192-168-176-89 kubelet: I0921 16:48:02.669276    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:12 ip-192-168-176-89 kubelet: I0921 16:48:12.679674    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:22 ip-192-168-176-89 kubelet: I0921 16:48:22.685594    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:32 ip-192-168-176-89 kubelet: I0921 16:48:32.695364    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:42 ip-192-168-176-89 kubelet: I0921 16:48:42.704727    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:48:52 ip-192-168-176-89 kubelet: I0921 16:48:52.709619    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:02 ip-192-168-176-89 kubelet: I0921 16:49:02.716986    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:12 ip-192-168-176-89 kubelet: I0921 16:49:12.725751    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:22 ip-192-168-176-89 kubelet: I0921 16:49:22.730113    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:32 ip-192-168-176-89 kubelet: I0921 16:49:32.737374    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:42 ip-192-168-176-89 kubelet: I0921 16:49:42.744357    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:52 ip-192-168-176-89 kubelet: I0921 16:49:52.750529    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:49:58 ip-192-168-176-89 kubelet: I0921 16:49:58.817753    5582 kubelet.go:1304] Image garbage collection succeeded
+messages:Sep 21 16:50:02 ip-192-168-176-89 kubelet: I0921 16:50:02.757059    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:50:12 ip-192-168-176-89 kubelet: I0921 16:50:12.763010    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:50:22 ip-192-168-176-89 kubelet: I0921 16:50:22.767751    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:50:32 ip-192-168-176-89 kubelet: I0921 16:50:32.772906    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:50:42 ip-192-168-176-89 kubelet: I0921 16:50:42.778452    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:50:52 ip-192-168-176-89 kubelet: I0921 16:50:52.788089    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:02 ip-192-168-176-89 kubelet: I0921 16:51:02.796602    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:12 ip-192-168-176-89 kubelet: I0921 16:51:12.818121    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:22 ip-192-168-176-89 kubelet: I0921 16:51:22.826840    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:32 ip-192-168-176-89 kubelet: I0921 16:51:32.836235    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:42 ip-192-168-176-89 kubelet: I0921 16:51:42.844406    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:51:52 ip-192-168-176-89 kubelet: I0921 16:51:52.853488    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:02 ip-192-168-176-89 kubelet: I0921 16:52:02.871402    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:12 ip-192-168-176-89 kubelet: I0921 16:52:12.880048    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:22 ip-192-168-176-89 kubelet: I0921 16:52:22.888091    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:32 ip-192-168-176-89 kubelet: I0921 16:52:32.893270    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:42 ip-192-168-176-89 kubelet: I0921 16:52:42.900946    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:52:52 ip-192-168-176-89 kubelet: I0921 16:52:52.907678    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:02 ip-192-168-176-89 kubelet: I0921 16:53:02.914978    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:12 ip-192-168-176-89 kubelet: I0921 16:53:12.922467    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:22 ip-192-168-176-89 kubelet: I0921 16:53:22.930378    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:32 ip-192-168-176-89 kubelet: I0921 16:53:32.938314    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:42 ip-192-168-176-89 kubelet: I0921 16:53:42.943790    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:53:52 ip-192-168-176-89 kubelet: I0921 16:53:52.951485    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:02 ip-192-168-176-89 kubelet: I0921 16:54:02.959950    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:12 ip-192-168-176-89 kubelet: I0921 16:54:12.967754    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:22 ip-192-168-176-89 kubelet: I0921 16:54:22.975176    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:32 ip-192-168-176-89 kubelet: I0921 16:54:32.983784    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:42 ip-192-168-176-89 kubelet: I0921 16:54:42.991861    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:54:52 ip-192-168-176-89 kubelet: I0921 16:54:52.996989    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:03 ip-192-168-176-89 kubelet: I0921 16:55:03.002410    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:13 ip-192-168-176-89 kubelet: I0921 16:55:13.009465    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:23 ip-192-168-176-89 kubelet: I0921 16:55:23.016346    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:33 ip-192-168-176-89 kubelet: I0921 16:55:33.022876    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:43 ip-192-168-176-89 kubelet: I0921 16:55:43.030153    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:55:53 ip-192-168-176-89 kubelet: I0921 16:55:53.038031    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:03 ip-192-168-176-89 kubelet: I0921 16:56:03.046211    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:13 ip-192-168-176-89 kubelet: I0921 16:56:13.064479    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:23 ip-192-168-176-89 kubelet: I0921 16:56:23.069219    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:33 ip-192-168-176-89 kubelet: I0921 16:56:33.076261    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:43 ip-192-168-176-89 kubelet: I0921 16:56:43.083593    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:56:53 ip-192-168-176-89 kubelet: I0921 16:56:53.090273    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:03 ip-192-168-176-89 kubelet: I0921 16:57:03.097562    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:13 ip-192-168-176-89 kubelet: I0921 16:57:13.103785    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:23 ip-192-168-176-89 kubelet: I0921 16:57:23.109830    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:33 ip-192-168-176-89 kubelet: I0921 16:57:33.115982    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:43 ip-192-168-176-89 kubelet: I0921 16:57:43.122076    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:57:53 ip-192-168-176-89 kubelet: I0921 16:57:53.127474    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:03 ip-192-168-176-89 kubelet: I0921 16:58:03.133269    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:13 ip-192-168-176-89 kubelet: I0921 16:58:13.138538    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:23 ip-192-168-176-89 kubelet: I0921 16:58:23.143551    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:33 ip-192-168-176-89 kubelet: I0921 16:58:33.148834    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:43 ip-192-168-176-89 kubelet: I0921 16:58:43.155893    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:58:53 ip-192-168-176-89 kubelet: I0921 16:58:53.161964    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:03 ip-192-168-176-89 kubelet: I0921 16:59:03.256667    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:13 ip-192-168-176-89 kubelet: I0921 16:59:13.262629    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:23 ip-192-168-176-89 kubelet: I0921 16:59:23.269378    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:33 ip-192-168-176-89 kubelet: I0921 16:59:33.274726    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:38 ip-192-168-176-89 kubelet: I0921 16:59:38.129732    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 16:59:38 ip-192-168-176-89 kubelet: I0921 16:59:38.151928    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 16:59:38 ip-192-168-176-89 kubelet: I0921 16:59:38.874383    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 16:59:43 ip-192-168-176-89 kubelet: I0921 16:59:43.280815    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:48 ip-192-168-176-89 kubelet: I0921 16:59:48.225212    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 16:59:53 ip-192-168-176-89 kubelet: I0921 16:59:53.285928    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 16:59:58 ip-192-168-176-89 kubelet: I0921 16:59:58.157126    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:03 ip-192-168-176-89 kubelet: I0921 17:00:03.291402    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:08 ip-192-168-176-89 kubelet: I0921 17:00:08.155051    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:13 ip-192-168-176-89 kubelet: I0921 17:00:13.296758    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:18 ip-192-168-176-89 kubelet: I0921 17:00:18.156427    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:23 ip-192-168-176-89 kubelet: I0921 17:00:23.301904    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:28 ip-192-168-176-89 kubelet: I0921 17:00:28.159607    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:33 ip-192-168-176-89 kubelet: I0921 17:00:33.307677    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:38 ip-192-168-176-89 kubelet: I0921 17:00:38.158505    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:43 ip-192-168-176-89 kubelet: I0921 17:00:43.313148    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:48 ip-192-168-176-89 kubelet: I0921 17:00:48.158124    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:00:53 ip-192-168-176-89 kubelet: I0921 17:00:53.318748    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:00:58 ip-192-168-176-89 kubelet: I0921 17:00:58.156364    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:01:03 ip-192-168-176-89 kubelet: I0921 17:01:03.324062    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:01:08 ip-192-168-176-89 kubelet: I0921 17:01:08.154728    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+messages:Sep 21 17:01:13 ip-192-168-176-89 kubelet: I0921 17:01:13.340326    5582 setters.go:86] Using node IP: "192.168.176.89"
+messages:Sep 21 17:01:18 ip-192-168-176-89 kubelet: I0921 17:01:18.155336    5582 logs.go:317] Finish parsing log file "/var/log/pods/kube-system_aws-node-4ccvw_d0c4c02e-7984-420c-b2a6-fed28b7ad529/aws-node/0.log"
+secure:Sep 21 16:44:28 ip-192-168-176-89 sudo:    root : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/bin/mv /etc/eks/containerd/kubelet-containerd.service /etc/systemd/system/kubelet.service
+secure:Sep 21 16:44:28 ip-192-168-176-89 sudo:    root : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/bin/chown root:root /etc/systemd/system/kubelet.service
+

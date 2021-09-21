@@ -1,3 +1,4 @@
+# WARNING: I think this should actually be a Job
 apiVersion: v1
 kind: Pod
 metadata:

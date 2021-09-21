@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nvidia-smi-job
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: nvidia-smi
+          image: nvidia/cuda:9.2-devel
+          args:
+            - "nvidia-smi"
+          resources:
+            limits:
+              nvidia.com/gpu: 4

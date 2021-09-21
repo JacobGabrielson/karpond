@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fake-neuron-user
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: fake-neuronser
+    image: public.ecr.aws/eks-distro/kubernetes/pause:3.2
+    resources:
+      requests:
+        cpu: 1
+      limits:
+        aws.amazon.com/neuron: 1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: another-fake-neuron-user
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: another-fake-neuronser
+    image: public.ecr.aws/eks-distro/kubernetes/pause:3.2
+    resources:
+      requests:
+        cpu: 1
+      limits:
+        aws.amazon.com/neuron: 1
+
+

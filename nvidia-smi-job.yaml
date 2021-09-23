@@ -10,8 +10,8 @@ spec:
       containers:
         - name: nvidia-smi
           image: nvidia/cuda:9.2-devel
-          args:
-            - "nvidia-smi"
+          command: ["/bin/sh"]
+          args: ["-c", "sleep 120 && nvidia-smi"]
           resources:
             limits:
               nvidia.com/gpu: 4

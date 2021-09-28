@@ -13,7 +13,8 @@ spec:
      larry: sounders
      phil: swif
      pikov: andropov
-  ttlSecondsAfterEmpty: 30
+  #ttlSecondsAfterEmpty: 30
+  #architectures: ['amd64']
   provider:
     instanceProfile: KarpenterNodeInstanceProfile-${CLUSTER_NAME}
     cluster:

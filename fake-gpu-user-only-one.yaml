@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fake-gpu-user
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: fake-gpuser
+    image: public.ecr.aws/eks-distro/kubernetes/pause:3.2
+    resources:
+      requests:
+        cpu: 1
+      limits:
+        nvidia.com/gpu: 1

@@ -37,3 +37,52 @@ test3:
 try out this 
 
 https://www.tensorflow.org/tfx/serving/docker#serving_with_docker_using_your_gpu
+
+## getting ec2 instance into shape for testing
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-nvidia-driver.html#preinstalled-nvidia-driver
+
+on g2 instance, needed https://us.download.nvidia.com/XFree86/Linux-x86_64/470.74/NVIDIA-Linux-x86_64-470.74.run (grid, k520) - but didn't work
+
+actually, needed this AMI https://aws.amazon.com/marketplace/pp/prodview-64e4rx3h733ru?sr=0-3&ref_=beagle&applicationId=AWSMPContessa ?? 
+
+now trying this:
+
+- https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-amazon-linux
+
+None of above worked... trying to use the ami-id from the SSM params on a g2 
+
+```bash
+sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi 
+```
+
+does work
+
+BUT g2 does NOT work with tensorflow example above, because it needs minimum computeCompatibility score of 3.5, this is only 3.0 (K520)
+
+trying g3 w/ ami-03047fe9510483cce
+
+```
+
+sudo yum update -y
+sudo yum install -y git make glibc-devel emacs ncurses-devel
+sudo systemctl --now enable docke
+sudo docker run --rm hello-world
+sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+
+```
+
+then follow this: https://www.tensorflow.org/tfx/serving/docker#gpu_serving_example
+
+add via `visudo`:
+
+```
+someuser ALL=(ALL) NOPASSWD:ALL
+```
+
+
+
+
+
+
+

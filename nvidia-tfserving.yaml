@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tfserving
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: tfserving
+    image: jacobg23/test:latest
+    #args:
+    #- "nvidia-smi"
+    resources:
+      limits:
+        nvidia.com/gpu: 1

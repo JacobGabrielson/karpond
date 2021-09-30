@@ -78,7 +78,7 @@ add via `visudo`:
 
 ```
 someuser ALL=(ALL) NOPASSWD:ALL
-```
+	```
 
 
 

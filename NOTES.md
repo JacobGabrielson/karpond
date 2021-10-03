@@ -78,11 +78,123 @@ add via `visudo`:
 
 ```
 someuser ALL=(ALL) NOPASSWD:ALL
-	```
+```
 
+# Nvidia device plugin ds
 
+https://github.com/NVIDIA/k8s-device-plugin
 
+# Nvidia gpu feature discovery ds
 
+https://github.com/NVIDIA/gpu-feature-discovery#deploy-nvidia-gpu-feature-discovery-gfd
 
+# p4 instance type info
+
+```
+  InstanceTypes:
+- AutoRecoverySupported: false
+  BareMetal: false
+  BurstablePerformanceSupported: false
+  CurrentGeneration: true
+  DedicatedHostsSupported: false
+  EbsInfo:
+    EbsOptimizedInfo:
+      BaselineBandwidthInMbps: 19000
+      BaselineIops: 80000
+      BaselineThroughputInMBps: 2375.0
+      MaximumBandwidthInMbps: 19000
+      MaximumIops: 80000
+      MaximumThroughputInMBps: 2375.0
+    EbsOptimizedSupport: default
+    EncryptionSupport: supported
+    NvmeSupport: required
+  FreeTierEligible: false
+  GpuInfo:
+    Gpus:
+    - Count: 8
+      Manufacturer: NVIDIA
+      MemoryInfo:
+        SizeInMiB: 32768
+      Name: V100
+    TotalGpuMemoryInMiB: 262144
+  HibernationSupported: false
+  Hypervisor: nitro
+  InstanceStorageInfo:
+    Disks:
+    - Count: 2
+      SizeInGB: 900
+      Type: ssd
+    NvmeSupport: required
+    TotalSizeInGB: 1800
+  InstanceStorageSupported: true
+  InstanceType: p3dn.24xlarge
+  MemoryInfo:
+    SizeInMiB: 786432
+  NetworkInfo:
+    DefaultNetworkCardIndex: 0
+    EfaInfo:
+      MaximumEfaInterfaces: 1
+    EfaSupported: true
+    EnaSupport: required
+    Ipv4AddressesPerInterface: 50
+    Ipv6AddressesPerInterface: 50
+    Ipv6Supported: true
+    MaximumNetworkCards: 1
+    MaximumNetworkInterfaces: 15
+    NetworkCards:
+    - MaximumNetworkInterfaces: 15
+      NetworkCardIndex: 0
+      NetworkPerformance: 100 Gigabit
+    NetworkPerformance: 100 Gigabit
+  PlacementGroupInfo:
+    SupportedStrategies:
+    - cluster
+    - partition
+    - spread
+  ProcessorInfo:
+    SupportedArchitectures:
+    - x86_64
+    SustainedClockSpeedInGhz: 2.5
+  SupportedBootModes:
+  - legacy-bios
+  SupportedRootDeviceTypes:
+  - ebs
+  SupportedUsageClasses:
+  - on-demand
+  - spot
+  SupportedVirtualizationTypes:
+  - hvm
+  VCpuInfo:
+    DefaultCores: 48
+    DefaultThreadsPerCore: 2
+    DefaultVCpus: 96
+    ValidCores:
+    - 4
+    - 6
+    - 8
+    - 10
+    - 12
+    - 14
+    - 16
+    - 18
+    - 20
+    - 22
+    - 24
+    - 26
+    - 28
+    - 30
+    - 32
+    - 34
+    - 36
+    - 38
+    - 40
+    - 42
+    - 44
+    - 46
+    - 48
+    ValidThreadsPerCore:
+    - 1
+    - 2
+```
 
 

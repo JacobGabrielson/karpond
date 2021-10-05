@@ -88,6 +88,43 @@ https://github.com/NVIDIA/k8s-device-plugin
 
 https://github.com/NVIDIA/gpu-feature-discovery#deploy-nvidia-gpu-feature-discovery-gfd
 
+Note this only works on nodes with this label (note: later learned that NFD seems to add
+this? Maybe NFD has to run first?):
+
+```
+k label node ip-192-168-123-212.us-west-2.compute.internal feature.node.kubernetes.io/pci-10de.present=true
+node/ip-192-168-123-212.us-west-2.compute.internal labeled
+```
+
+and it just writes to a file:
+
+also need NFD:
+
+https://github.com/kubernetes-sigs/node-feature-discovery
+
+Ok, so GFD outputs:
+
+```
+[root@ip-192-168-123-212 features.d]# pwd
+/etc/kubernetes/node-feature-discovery/features.d
+[root@ip-192-168-123-212 features.d]# cat gfd
+nvidia.com/gfd.timestamp=1633385165
+nvidia.com/cuda.driver.minor=73
+nvidia.com/gpu.machine=HVM-domU
+nvidia.com/gpu.product=Tesla-K80
+nvidia.com/gpu.count=16
+nvidia.com/cuda.runtime.major=11
+nvidia.com/cuda.driver.major=460
+nvidia.com/cuda.runtime.minor=2
+nvidia.com/gpu.family=kepler
+nvidia.com/gpu.compute.minor=7
+nvidia.com/gpu.memory=11441
+nvidia.com/cuda.driver.rev=01
+nvidia.com/gpu.compute.major=3
+```
+
+But NFD isn't picking it up.
+
 # p4 instance type info
 
 ```
@@ -198,3 +235,28 @@ https://github.com/NVIDIA/gpu-feature-discovery#deploy-nvidia-gpu-feature-discov
 ```
 
 
+failure launching kubelet on a g4:
+
+```
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.762315    8031 manager_no_libpfm.go:28] cAdvisor is build without cgo and/or libpfm support. Perf event counters are not available.
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763108    8031 manager.go:229] Version: {KernelVersion:5.4.144-69.257.amzn2.x86_64 ContainerOsVersion:Amazon Linux 2 DockerVersion:Unknown DockerAPIVersion:Unknown CadvisorVersion: CadvisorRevision:}
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763615    8031 container_manager_linux.go:278] "Container manager verified user specified cgroup-root exists" cgroupRoot=[]
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763782    8031 container_manager_linux.go:283] "Creating Container Manager object based on Node Config" nodeConfig={RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:remote CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/kubelet ProtectKernelDefaults:true NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: ReservedSystemCPUs: EnforceNodeAllocatable:map[pods:{}] KubeReserved:map[cpu:{i:{value:110 scale:-3} d:{Dec:<nil>} s:110m Format:DecimalSI} ephemeral-storage:{i:{value:1073741824 scale:0} d:{Dec:<nil>} s:1Gi Format:BinarySI} memory:{i:{value:2966421504 scale:0} d:{Dec:<nil>} s:2829Mi Format:BinarySI}] SystemReserved:map[] HardEvictionThresholds:[{Signal:nodefs.inodesFree Operator:LessThan Value:{Quantity:<nil> Percentage:0.05} GracePeriod:0s MinReclaim:<nil>} {Signal:memory.available Operator:LessThan Value:{Quantity:100Mi Percentage:0} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.1} GracePeriod:0s MinReclaim:<nil>}]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalTopologyManagerScope:container ExperimentalCPUManagerReconcilePeriod:10s ExperimentalMemoryManagerPolicy:None ExperimentalMemoryManagerReservedMemory:[] ExperimentalPodPidsLimit:-1 EnforceCPULimits:true CPUCFSQuotaPeriod:100ms ExperimentalTopologyManagerPolicy:none}
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763953    8031 topology_manager.go:120] "Creating topology manager with policy per scope" topologyPolicyName="none" topologyScopeName="container"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763975    8031 container_manager_linux.go:314] "Initializing Topology Manager" policy="none" scope="container"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.763992    8031 container_manager_linux.go:319] "Creating device plugin manager" devicePluginEnabled=true
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.764037    8031 manager.go:136] "Creating Device Plugin manager" path="/var/lib/kubelet/device-plugins/kubelet.sock"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.764442    8031 server.go:989] "Cloud provider determined current node" nodeName="ip-192-168-160-221.us-west-2.compute.internal"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.764467    8031 server.go:1131] "Using root directory" path="/var/lib/kubelet"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: WARNING: 2021/10/04 16:57:28 grpc: addrConn.createTransport failed to connect to {/run/containerd/containerd.sock  <nil> 0 <nil>}. Err :connection error: desc = "transport: Error while dialing dial unix /run/containerd/containerd.sock: connect: no such file or directory". Reconnecting...
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: WARNING: 2021/10/04 16:57:28 grpc: addrConn.createTransport failed to connect to {/run/containerd/containerd.sock  <nil> 0 <nil>}. Err :connection error: desc = "transport: Error while dialing dial unix /run/containerd/containerd.sock: connect: no such file or directory". Reconnecting...
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.767066    8031 kubelet.go:404] "Attempting to sync node with API server"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.767582    8031 kubelet.go:283] "Adding apiserver pod source"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: I1004 16:57:28.767625    8031 apiserver.go:42] "Waiting for node sync before watching apiserver pods"
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: E1004 16:57:28.770481    8031 remote_runtime.go:86] "Version from runtime service failed" err="rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial unix /run/containerd/containerd.sock: connect: no such file or directory\""
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: E1004 16:57:28.770534    8031 kuberuntime_manager.go:208] "Get runtime version failed" err="get remote runtime typed version failed: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial unix /run/containerd/containerd.sock: connect: no such file or directory\""
+Oct  4 16:57:28 ip-192-168-160-221 kubelet: E1004 16:57:28.770562    8031 server.go:292] "Failed to run kubelet" err="failed to run Kubelet: failed to create kubelet: get remote runtime typed version failed: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial unix /run/containerd/containerd.sock: connect: no such file or directory\""
+Oct  4 16:57:28 ip-192-168-160-221 systemd: kubelet.service: main process exited, code=exited, status=1/FAILURE
+Oct  4 16:57:28 ip-192-168-160-221 systemd: Unit kubelet.service entered failed state.
+Oct  4 16:57:28 ip-192-168-160-221 systemd: kubelet.service failed.
+```

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inflate-tf
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: inflate-tf
+  template:
+    metadata:
+      labels:
+        app: inflate-tf
+    spec:
+      # Note: you may wish to comment the tolerations section out
+      tolerations:
+        - key: foo
+          value: bar
+          effect: NoSchedule
+      containers:
+        - name: inflate-tf
+          image: jacobg23/test:latest
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+            requests:
+              cpu: 1

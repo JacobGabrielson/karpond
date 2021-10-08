@@ -274,3 +274,6 @@ Use?
 
 https://codeberg.org/hjacobs/kube-ops-view
 
+https://github.com/derailed/k9s
+
+

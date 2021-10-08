@@ -1,3 +1,5 @@
+# Note: use `kubectl proxy &` to access
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:

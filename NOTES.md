@@ -1,6 +1,13 @@
 
 # Debugging cni startup
 
+
+useful:
+
+```
+ <command> | curl -F 'sprunge=<-' http://sprunge.us
+ ```
+
 ipamd logs here on a worker node:
 
 /var/log/aws-routed-eni/*.log
@@ -260,3 +267,10 @@ Oct  4 16:57:28 ip-192-168-160-221 systemd: kubelet.service: main process exited
 Oct  4 16:57:28 ip-192-168-160-221 systemd: Unit kubelet.service entered failed state.
 Oct  4 16:57:28 ip-192-168-160-221 systemd: kubelet.service failed.
 ```
+
+# Demo
+
+Use?
+
+https://codeberg.org/hjacobs/kube-ops-view
+

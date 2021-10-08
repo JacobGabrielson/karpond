@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node.kubernetes.io/instance-type
+            operator: In
+            values:
+            - t3a.large
+  containers:
+  - name: with-node-affinity
+    image: k8s.gcr.io/pause:2.0

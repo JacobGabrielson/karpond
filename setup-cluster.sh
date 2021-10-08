@@ -14,3 +14,4 @@ helm install \
     --generate-name \
     nvgfd/gpu-feature-discovery
 
+# 2. AMD node labeller?

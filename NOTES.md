@@ -274,6 +274,10 @@ Use?
 
 https://codeberg.org/hjacobs/kube-ops-view
 
+  docker run -it --net=host hjacobs/kube-ops-view
+  
+  (then open localhost 8080)!!!
+
 https://github.com/derailed/k9s
 
 

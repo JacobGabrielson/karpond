@@ -17,6 +17,13 @@ twatch() {
     fi
 }
 
+kubestats() {
+    printf "nodes: %s pods: %s spots: %s\n" \
+	   $(kubectl get nodes --no-headers | wc -l) \
+	   $(kubectl get pods --no-headers 2>/dev/null | wc -l) \
+	   $(aws ec2 describe-spot-instance-requests --filters Name=state,Values=active --query "SpotInstanceRequests[*].[InstanceId]" --output text | wc -l)    
+}
+
 podWatch() {
     kubectl get pods --all-namespaces -o json | jq -r '.items[] | [.metadata.ownerReferences[].kind,.spec.nodeName]? | @tsv' | sort | uniq -c | sort -k 3
 }
@@ -26,12 +33,19 @@ if [[ $1 == "podWatch" ]]; then
     exit 0
 fi
 
+if [[ $1 == "kubestats" ]]; then
+    kubestats
+    exit 0
+fi
+
+    
+
 # Demo for kubecon oct 2021
 if [[ $1 == "demo" ]]; then
-    tmux split-window -l 50% -h "stern -n karpenter -l 'karpenter in (controller,webhook)'"
-    tmux split-window -l 15% -v -d 'watch -d -n 1  aws ec2 describe-spot-instance-requests --filters Name=state,Values=active      --query "SpotInstanceRequests[*].[InstanceId]"     --output text'
-    tmux split-window -t $TMUX_PANE -l 30% -v -d "watch -d -n 1 kubectl get nodes -o wide"
-    tmux split-window -t $TMUX_PANE -l 30% -v -d "watch -d -n 5 $0 podWatch"
+    tmux split-window -l 50% -v "stern -n karpenter -l 'karpenter in (controller,webhook)'"
+    tmux split-window -l 3 -v "watch -d -n 5 $0 kubestats"
+    #tmux split-window -t $TMUX_PANE -l 35% -v -d "watch -d -n 1 'kubectl get nodes -o wide --no-headers'"
+    #tmux split-window -t $TMUX_PANE -l 35% -h -d "watch -d -n 5 $0 podWatch"
     exit
 fi
 

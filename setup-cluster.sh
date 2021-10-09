@@ -15,3 +15,7 @@ helm install \
     nvgfd/gpu-feature-discovery
 
 # 2. AMD node labeller?
+
+#3 metrics server
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml

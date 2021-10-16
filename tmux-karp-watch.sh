@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+script_dir=$(dirname $(realpath $0))
 
 twatch() {
     if [[ $1 = '-d' ]]; then
@@ -38,7 +38,15 @@ if [[ $1 == "kubestats" ]]; then
     exit 0
 fi
 
-    
+if [[ $1 == "emacs" ]]; then
+    tmux split-window -l 50% -h emacsclient -t
+    tmux split-window -t $TMUX_PANE -l 3 -v "watch -d -n 5 $0 kubestats"
+    tmux split-window -t $TMUX_PANE -l 7 -v -d "watch -d -n 1 kubectl get pods -n karpenter -o wide"
+    #tmux split-window -t $TMUX_PANE -l 40% -v -d "stern -n karpenter -l 'karpenter in (controller,webhook)'"
+    tmux split-window -t $TMUX_PANE -l 40% -v -d "${script_dir}/karp-stern.sh"
+    exit 0
+fi
+
 
 # Demo for kubecon oct 2021
 if [[ $1 == "demo" ]]; then

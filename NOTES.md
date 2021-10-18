@@ -1,3 +1,8 @@
+# SLR issue
+
+if you get service-linked role error, may be due to missing
+
+aws iam create-service-linked-role --aws-service-name spot.amazonaws.com
 
 # Debugging cni startup
 

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: inflate-sc
+spec:
+  serviceName: inflate-sc-server
+  replicas: 0
+  selector:
+    matchLabels:
+      app: inflate-sc
+  template:
+    metadata:
+      labels:
+        app: inflate-sc
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: karpond.example/inflatemeister
+                operator: In
+                values:
+                - quasiquote
+      containers:
+        - name: inflate
+          image: public.ecr.aws/eks-distro/kubernetes/pause:3.2
+          resources:
+            requests:
+              cpu: 1
+          volumeMounts:
+          - mountPath: /data
+            name: inflate-sc-vol
+  volumeClaimTemplates:
+  - metadata:
+      name: inflate-sc-vol
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 8Gi
+      storageClassName: sc-us-west-2b

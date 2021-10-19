@@ -8,4 +8,9 @@ parameters:
   iopsPerGB: "10"
   fsType: ext4
   zone: us-west-2b
-volumeBindingMode: WaitForFirstConsumer
+# seems to cause running into: https://github.com/openebs/openebs/issues/2915#issuecomment-623135043
+# (karpenter not waiting for the binding to happen?)
+#volumeBindingMode: WaitForFirstConsumer
+
+# Note this one does seem to work
+volumeBindingMode: Immediate

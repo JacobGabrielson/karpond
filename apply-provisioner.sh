@@ -14,7 +14,7 @@ spec:
      phil: swif
      pikov: andropov
   ttlSecondsAfterEmpty: 30
-  #architectures: ['amd64']
+  architectures: ['amd64']
   provider:
     #capacityTypes: ["spot", "on-demand"]
     #capacityTypes: ["on-demand"]

@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: karpond-test-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: sc-us-west-2b
+
+# Notes:
+#  Run:
+#    kubectl get pvc --watch-only -o yaml
+#  And then create this resource
+# Note that something like:
+
+#    volumeName: pvc-ec39cbfb-9966-4080-811e-89d213a4d16c
+#
+# Will be added after creation, ~3 steps after initial
+# creation
+

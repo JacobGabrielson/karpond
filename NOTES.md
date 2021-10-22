@@ -302,3 +302,103 @@ looks like both the kube-scheduler and the volume-controller call this
 same function to determine which PV will be attached to the PVC
 (in case there's one lying around and a PV doesn't need to be created
 dynamically). I think this only happens in WaitForFirstConsumer mode?
+
+## StatefulSet behavior
+
+### preserve ebs volumes?
+
+before/after diff of pod
+
+```bash
+k get pod inflate-sc-0 -o yaml > /tmp/inflate-sc-0-v1.yaml
+k delete pod inflate-sc-0
+k get pod inflate-sc-0 -o yaml > /tmp/inflate-sc-0-v2.yaml
+```
+
+```
+--- /tmp/inflate-sc-0-v1.yaml	2021-10-21 18:15:41.959897090 -0700
++++ /tmp/inflate-sc-0-v2.yaml	2021-10-21 18:16:36.475931887 -0700
+@@ -3,7 +3,7 @@
+ metadata:
+   annotations:
+     kubernetes.io/psp: eks.privileged
+-  creationTimestamp: "2021-10-19T18:08:09Z"
++  creationTimestamp: "2021-10-22T01:16:04Z"
+   generateName: inflate-sc-
+   labels:
+     app: inflate-sc
+@@ -18,8 +18,8 @@
+     kind: StatefulSet
+     name: inflate-sc
+     uid: f4436af3-d3d0-4c45-9d7e-47546819966b
+-  resourceVersion: "32462833"
+-  uid: ca607ea7-975e-42d9-add3-e6365663cbfe
++  resourceVersion: "33547871"
++  uid: c4509808-1710-4fb4-b363-bb93b0662131
+ spec:
+   affinity:
+     nodeAffinity:
+@@ -43,7 +43,7 @@
+     - mountPath: /data
+       name: inflate-sc-vol
+     - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+-      name: kube-api-access-24dbk
++      name: kube-api-access-77cf5
+       readOnly: true
+   dnsPolicy: ClusterFirst
+   enableServiceLinks: true
+@@ -71,7 +71,7 @@
+   - name: inflate-sc-vol
+     persistentVolumeClaim:
+       claimName: inflate-sc-vol-inflate-sc-0
+-  - name: kube-api-access-24dbk
++  - name: kube-api-access-77cf5
+     projected:
+       defaultMode: 420
+       sources:
+@@ -92,23 +92,23 @@
+ status:
+   conditions:
+   - lastProbeTime: null
+-    lastTransitionTime: "2021-10-19T18:09:05Z"
++    lastTransitionTime: "2021-10-22T01:16:04Z"
+     status: "True"
+     type: Initialized
+   - lastProbeTime: null
+-    lastTransitionTime: "2021-10-19T18:09:32Z"
++    lastTransitionTime: "2021-10-22T01:16:14Z"
+     status: "True"
+     type: Ready
+   - lastProbeTime: null
+-    lastTransitionTime: "2021-10-19T18:09:32Z"
++    lastTransitionTime: "2021-10-22T01:16:14Z"
+     status: "True"
+     type: ContainersReady
+   - lastProbeTime: null
+-    lastTransitionTime: "2021-10-19T18:08:14Z"
++    lastTransitionTime: "2021-10-22T01:16:04Z"
+     status: "True"
+     type: PodScheduled
+   containerStatuses:
+-  - containerID: containerd://225d7883c203929cd1ffca40bfc2a9ae1a68862cf582060684ca010ecd0eba2b
++  - containerID: containerd://dea8915f242a0a88ab6f14b70c2275f905d292ebe483434782e7768abb42012d
+     image: public.ecr.aws/eks-distro/kubernetes/pause:3.2
+     imageID: public.ecr.aws/eks-distro/kubernetes/pause@sha256:cc3d348dc60bf02db0a1e39d7fe69f28a2ca54770fcdcc1c3e9baa6603b648de
+     lastState: {}
+@@ -118,11 +118,11 @@
+     started: true
+     state:
+       running:
+-        startedAt: "2021-10-19T18:09:31Z"
++        startedAt: "2021-10-22T01:16:13Z"
+   hostIP: 192.168.141.238
+   phase: Running
+-  podIP: 192.168.130.132
++  podIP: 192.168.158.83
+   podIPs:
+-  - ip: 192.168.130.132
++  - ip: 192.168.158.83
+   qosClass: Burstable
+-  startTime: "2021-10-19T18:09:05Z"
++  startTime: "2021-10-22T01:16:04Z"
+```

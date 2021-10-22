@@ -44,6 +44,7 @@ if [[ $1 == "emacs" ]]; then
     tmux split-window -t $TMUX_PANE -l 7 -v -d "watch -d -n 1 kubectl get pods -n karpenter -o wide"
     #tmux split-window -t $TMUX_PANE -l 40% -v -d "stern -n karpenter -l 'karpenter in (controller,webhook)'"
     tmux split-window -t $TMUX_PANE -l 40% -v -d "${script_dir}/karp-stern.sh"
+    tmux split-window -t $TMUX_PANE -l 7 -v -d "watch -d -n 1 kubectl get nodes -o wide"
     exit 0
 fi
 

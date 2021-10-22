@@ -286,3 +286,19 @@ https://codeberg.org/hjacobs/kube-ops-view
 https://github.com/derailed/k9s
 
 
+# Volume Notes
+
+## Useful links
+
+https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+
+https://github.com/openebs/openebs/issues/2915#issuecomment-623135043
+indicates that the kube-scheduler has special logic to know how to
+wait for pods to get pv binding before scheduling - if
+WaitForFirstConsumer is set
+
+https://github.com/kubernetes/kubernetes/search?q=FindMatchingVolume
+looks like both the kube-scheduler and the volume-controller call this
+same function to determine which PV will be attached to the PVC
+(in case there's one lying around and a PV doesn't need to be created
+dynamically). I think this only happens in WaitForFirstConsumer mode?

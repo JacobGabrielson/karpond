@@ -23,9 +23,6 @@ spec:
   ttlSecondsAfterEmpty: 30
   #architectures: ['amd64']
   provider:
-    #capacityTypes: ["spot", "on-demand"]
-    #capacityTypes: ["on-demand"]
-    #capacityTypes: ["spot"]
     instanceProfile: KarpenterNodeInstanceProfile-${CLUSTER_NAME}
     cluster:
       name: ${CLUSTER_NAME}

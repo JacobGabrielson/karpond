@@ -76,39 +76,3 @@ NewConstraints, however, is called by:
 func (s *Scheduler) getSchedules
 ```
 
-use?
-
-```
-	if err := f.KubeClient.List(ctx, pods, client.MatchingFields{"spec.nodeName": ""}); err != nil {
-```
-
-What would query look like (roughly?)
-
-`PodSpec` has:
-
-```
-	Volumes []Volume
-```
-
-and `Volume` is:
-
-```
-type Volume struct {
-	Name string
-	VolumeSource
-}
-```
-
-which includes:
-
-```
-type VolumeSource struct {
-	// ... other things ...
-
-	// PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace
-	// +optional
-	PersistentVolumeClaim *PersistentVolumeClaimVolumeSource
-
-	// ... other things ...
-```
-

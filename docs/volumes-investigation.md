@@ -328,3 +328,143 @@ Note that I ran into an issue:
 ```
   
   
+# Where to add code
+
+`storagetopology.Inject()` (in karp scheduler)
+
+scheduling.NewConstraints takes a pod but has no kubeclient
+
+
+# How to Query
+
+use something like this?
+
+```
+	if err := f.KubeClient.List(ctx, pods, client.MatchingFields{"spec.nodeName": ""}); err != nil {
+```
+
+What would query look like (roughly?)
+
+`PodSpec` has:
+
+```
+	Volumes []Volume
+```
+
+and `Volume` is:
+
+```
+type Volume struct {
+	Name string
+	VolumeSource
+}
+```
+
+which includes:
+
+```
+type VolumeSource struct {
+	// ... other things ...
+
+	// PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace
+	// +optional
+	PersistentVolumeClaim *PersistentVolumeClaimVolumeSource
+
+	// ... other things ...
+```
+
+which is:
+
+```
+type PersistentVolumeClaimVolumeSource struct {
+	// ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume
+	ClaimName string
+	ReadOnly bool
+}
+```
+
+which refers to:
+
+```
+type PersistentVolumeClaim struct {
+	metav1.TypeMeta
+	metav1.ObjectMeta
+	Spec PersistentVolumeClaimSpec
+	Status PersistentVolumeClaimStatus
+}
+```
+
+two things to look at here ... status looks like this:
+
+```
+type PersistentVolumeClaimStatus struct {
+	Phase PersistentVolumeClaimPhase
+	AccessModes []PersistentVolumeAccessMode
+	Capacity ResourceList
+	Conditions []PersistentVolumeClaimCondition
+}
+```
+
+I think we only care about the `Phase` if it's `ClaimPending`:
+
+```
+const (
+	ClaimPending PersistentVolumeClaimPhase = "Pending"
+	ClaimBound PersistentVolumeClaimPhase = "Bound"
+	ClaimLost PersistentVolumeClaimPhase = "Lost"
+)
+```
+
+meanwhile, `PersistentVolumeClaimSpec` looks like:
+
+```
+type PersistentVolumeClaimSpec struct {
+	AccessModes []PersistentVolumeAccessMode
+	Selector *metav1.LabelSelector
+	Resources ResourceRequirements
+	VolumeName string
+	StorageClassName *string
+	VolumeMode *PersistentVolumeMode
+	DataSource *TypedLocalObjectReference
+	DataSourceRef *TypedLocalObjectReference
+}
+```
+
+I *think* all we care about is the `StorageClassName` so we can find
+any zonal restrictions.
+
+Meanwhile, `StorageClass`:
+
+```
+type StorageClass struct {
+	metav1.TypeMeta
+	// +optional
+	metav1.ObjectMeta
+
+	// This is an optionally-prefixed name, like a label key.
+	// For example: "kubernetes.io/gce-pd" or "kubernetes.io/aws-ebs".
+	// This value may not be empty.
+	Provisioner string
+
+	// VolumeBindingMode indicates how PersistentVolumeClaims should be
+	// provisioned and bound.  When unset, VolumeBindingImmediate is used.
+	// This field is only honored by servers that enable the VolumeScheduling feature.
+	// +optional
+	VolumeBindingMode *VolumeBindingMode
+
+	// Restrict the node topologies where volumes can be dynamically provisioned.
+	// Each volume plugin defines its own supported topology specifications.
+	// An empty TopologySelectorTerm list means there is no topology restriction.
+	// This field is only honored by servers that enable the VolumeScheduling feature.
+	// +optional
+	AllowedTopologies []api.TopologySelectorTerm
+}
+```
+
+- Definitely need to look at `AllowedTopologies`
+- Not sure exactly what to do with `VolumeBindingMode` - if it's `WaitForFirstConsumer`
+  we presumably need to add the annotation `volume.kubernetes.io/selected-node`
+
+Or: maybe we just look for `volume.kubernetes.io/selected-node` ...
+instead of all the pointer chasing above? Might be race conditions w/
+something else (the volume controller?)

@@ -58,3 +58,57 @@ https://codeberg.org/hjacobs/kube-ops-view
 https://github.com/derailed/k9s
 
 
+# Muliple Provisioner Investigation
+
+https://github.com/awslabs/karpenter/issues/783
+
+
+CriticalAddonsOnly - unused now?
+
+https://github.com/kubernetes/kubernetes/pull/101966#issuecomment-840788605
+
+looks that way.... also it was only used as a temporary taint anyway
+(by the "rescheduler")
+
+NewConstraints, however, is called by:
+
+```
+func (s *Scheduler) getSchedules
+```
+
+use?
+
+```
+	if err := f.KubeClient.List(ctx, pods, client.MatchingFields{"spec.nodeName": ""}); err != nil {
+```
+
+What would query look like (roughly?)
+
+`PodSpec` has:
+
+```
+	Volumes []Volume
+```
+
+and `Volume` is:
+
+```
+type Volume struct {
+	Name string
+	VolumeSource
+}
+```
+
+which includes:
+
+```
+type VolumeSource struct {
+	// ... other things ...
+
+	// PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace
+	// +optional
+	PersistentVolumeClaim *PersistentVolumeClaimVolumeSource
+
+	// ... other things ...
+```
+

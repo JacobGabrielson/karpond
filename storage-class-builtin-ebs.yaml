@@ -7,10 +7,15 @@ parameters:
   type: io1
   iopsPerGB: "10"
   fsType: ext4
-  zone: us-west-2b
+  # Note: 'zone' is not supported in WaitForFirstConsumer mode, only allowedTopologies
+  #zone: us-west-2b
 # seems to cause running into: https://github.com/openebs/openebs/issues/2915#issuecomment-623135043
 # (karpenter not waiting for the binding to happen?)
 volumeBindingMode: WaitForFirstConsumer
-
+allowedTopologies:
+- matchLabelExpressions:
+  - key: topology.kubernetes.io/zone
+    values:
+    - us-west-2b
 # Note this one does seem to work
 #volumeBindingMode: Immediate

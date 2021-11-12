@@ -468,3 +468,10 @@ type StorageClass struct {
 Or: maybe we just look for `volume.kubernetes.io/selected-node` ...
 instead of all the pointer chasing above? Might be race conditions w/
 something else (the volume controller?)
+
+## When PV already exists
+
+In this case, need to check the `pv.Spec.NodeAffinity` field, and add
+those constraints in. E.g. they might look like:
+
+

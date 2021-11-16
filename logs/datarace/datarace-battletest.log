@@ -1,0 +1,969 @@
+-*- mode: compilation; default-directory: "~/Documents/GitHub/karpenter/" -*-
+Compilation started at Fri Nov 12 17:04:37
+
+make battletest
+# Ensure all files have cyclo-complexity =< 10
+gocyclo -over 11 ./pkg
+# Run randomized, parallelized, racing, code coveraged, tests
+ginkgo -r \
+	-cover -coverprofile=coverage.out -outputdir=. -coverpkg=./pkg/... \
+	--randomizeAllSpecs --randomizeSuites -race
+[1636765477] Controllers/Allocation - 6/6 specs 
+---------------------------------------------------------
+Received interrupt.  Running AfterSuite...
+^C again to terminate immediately
+==================
+WARNING: DATA RACE
+Read at 0x00c00020c1e8 by goroutine 55:
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:199 +0x58
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c00020c1e8 by goroutine 54:
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5e6
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000448c00 by goroutine 55:
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:206 +0x99
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c000448c00 by goroutine 54:
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:71 +0x26b
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c00037c780 by goroutine 55:
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:206 +0xba
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c00037c780 by goroutine 54:
+  os/exec.(*Cmd).Start()
+      /usr/local/go/src/os/exec/exec.go:422 +0x9f5
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:94 +0x60e
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000448c20 by goroutine 55:
+  github.com/onsi/gomega/gexec.(*Session).ExitCode()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:127 +0x5b
+  github.com/onsi/gomega/gexec.(*Session).processIsAlive()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:217 +0x3a
+  github.com/onsi/gomega/gexec.(*Session).Signal()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:190 +0x7a
+  github.com/onsi/gomega/gexec.(*Session).Terminate()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:179 +0x104
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0xd1
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c000448c20 by goroutine 54:
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:75 +0x3cc
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Write at 0x00c000044258 by goroutine 55:
+  sync/atomic.CompareAndSwapInt32()
+      /usr/local/go/src/runtime/race_amd64.s:334 +0xb
+  sync/atomic.CompareAndSwapInt32()
+      <autogenerated>:1 +0x1e
+  github.com/onsi/gomega/gexec.(*Session).ExitCode()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:127 +0x6c
+  github.com/onsi/gomega/gexec.(*Session).processIsAlive()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:217 +0x3a
+  github.com/onsi/gomega/gexec.(*Session).Signal()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:190 +0x7a
+  github.com/onsi/gomega/gexec.(*Session).Terminate()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:179 +0x104
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0xd1
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1
+.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c000044258 by goroutine 54:
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:75 +0x3a4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000448c28 by goroutine 55:
+  github.com/onsi/gomega/gexec.(*Session).ExitCode()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:129 +0xca
+  github.com/onsi/gomega/gexec.(*Session).processIsAlive()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:217 +0x3a
+  github.com/onsi/gomega/gexec.(*Session).Signal()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:190 +0x7a
+  github.com/onsi/gomega/gexec.(*Session).Terminate()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:179 +0x104
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0xd1
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c000448c28 by goroutine 54:
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:76 +0x415
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c00031c480 by goroutine 55:
+  os.(*Process).signal()
+      /usr/local/go/src/os/exec_unix.go:64 +0x6a
+  os.(*Process).Signal()
+      /usr/local/go/src/os/exec.go:138 +0xc4
+  github.com/onsi/gomega/gexec.(*Session).Signal()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:191 +0x7c
+  github.com/onsi/gomega/gexec.(*Session).Terminate()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:179 +0x104
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0xd1
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c00031c480 by goroutine 54:
+  os.newProcess()
+      /usr/local/go/src/os/exec.go:29 +0x65e
+  os.startProcess()
+      /usr/local/go/src/os/exec_posix.go:64 +0x6c8
+  os.StartProcess()
+      /usr/local/go/src/os/exec.go:109 +0x79
+  os/exec.(*Cmd).Start()
+      /usr/local/go/src/os/exec/exec.go:422 +0x9d3
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:94 +0x60e
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c00031c490 by goroutine 55:
+  sync/atomic.LoadInt32()
+      /usr/local/go/src/runtime/race_amd64.s:226 +0xb
+  sync/atomic.LoadUint32()
+      <autogenerated>:1 +0x16
+  os.(*Process).Signal()
+      /usr/local/go/src/os/exec.go:138 +0xc4
+  github.com/onsi/gomega/gexec.(*Session).Signal()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:191 +0x7c
+  github.com/onsi/gomega/gexec.(*Session).Terminate()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:179 +0x104
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0xd1
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c00031c490 by goroutine 54:
+  os.newProcess()
+      /usr/local/go/src/os/exec.go:29 +0x65e
+  os.startProcess()
+      /usr/local/go/src/os/exec_posix.go:64 +0x6c8
+  os.StartProcess()
+      /usr/local/go/src/os/exec.go:109 +0x79
+  os/exec.(*Cmd).Start()
+      /usr/local/go/src/os/exec/exec.go:422 +0x9d3
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:94 +0x60e
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+==================
+WARNING: DATA RACE
+Read at 0x00c000448c18 by goroutine 55:
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:210 +0x117
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:167 +0xc4
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:49 +0x65
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:168 +0x1a7
+  github.com/awslabs/karpenter/pkg/test.(*Environment).Stop()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:102 +0x87
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func2()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:76 +0x4a
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runAfterSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:138 +0x146
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).registerForInterrupts()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:237 +0x1fd
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run·dwrap·1()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x47
+
+Previous write at 0x00c000448c18 by goroutine 54:
+  github.com/onsi/gomega/gexec.Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/gomega@v1.13.0/gexec/session.go:74 +0x351
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration/internal.(*ProcessState).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/internal/process.go:143 +0x5b2
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*APIServer).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/apiserver.go:82 +0xc5
+  sigs.k8s.io/controller-runtime/pkg/internal/testing/integration.(*ControlPlane).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/internal/testing/integration/control_plane.go:41 +0x251
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).startControlPlane()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:287 +0xbd
+  sigs.k8s.io/controller-runtime/pkg/envtest.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.8.3/pkg/envtest/server.go:253 +0xe24
+  giRan 6 of 0 Specs in 6.014 seconds
+thub.com/awslabs/karpenter/pkg/test.(*Environment).Start()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/test/environment.go:82 +0x5a
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.glob..func1()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:72 +0xf5
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).runSync()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:113 +0x10c
+  github.com/onsi/ginkgo/internal/leafnodes.(*runner).run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/runner.go:64 +0x157
+  github.com/onsi/ginkgo/internal/leafnodes.(*simpleSuiteNode).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/leafnodes/suite_nodes.go:25 +0x99
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).runBeforeSuite()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:123 +0x17a
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:63 +0x126
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 55 (running) created at:
+  github.com/onsi/ginkgo/internal/specrunner.(*SpecRunner).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/specrunner/spec_runner.go:60 +0x110
+  github.com/onsi/ginkgo/internal/suite.(*Suite).Run()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/internal/suite/suite.go:79 +0x6f5
+  github.com/onsi/ginkgo.runSpecsWithCustomReporters()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:238 +0x217
+  github.com/onsi/ginkgo.RunSpecs()
+      /home/ANT.AMAZON.COM/jacob/go/pkg/mod/github.com/onsi/ginkgo@v1.16.4/ginkgo_dsl.go:213 +0x267
+  github.com/awslabs/karpenter/pkg/controllers/allocation_test.TestAPIs()
+      /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter/pkg/controllers/allocation/suite_test.go:51 +0x15a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.(*T).Run·dwrap·21()
+      /usr/local/go/src/testing/testing.go:1306 +0x47
+
+Goroutine 54 (running) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:1306 +0x726
+  testing.runTests.func1()
+      /usr/local/go/src/testing/testing.go:1598 +0x99
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:1259 +0x22f
+  testing.runTests()
+      /usr/local/go/src/testing/testing.go:1596 +0x7ca
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:1504 +0x9d1
+  main.main()
+      _testmain.go:235 +0x32b
+==================
+FAIL! -- 0 Passed | 6 Failed | 0 Pending | 0 Skipped
+path is /home/ANT.AMAZON.COM/jacob/Documents/GitHub/karpenter
+Unable to read coverage file  to combine, open : no such file or directory
+
+Ginkgo ran 1 suite in 2m23.268909727s
+Test Suite Failed
+make: *** [Makefile:31: battletest] Error 1
+
+Compilation interrupt at Fri Nov 12 17:07:00
